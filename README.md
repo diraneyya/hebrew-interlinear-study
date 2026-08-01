@@ -23,7 +23,17 @@ It is the Abrahamic story shared with Sūrat aṣ-Ṣāffāt, and the wording co
 | **בְּנִי** | **يا بُنَيَّ** |
 | אֱלֹהִים **יִרְאֶה**־לּוֹ | إنّي **أَرى** في المَنامِ |
 
-Same roots, same scene. And the verse that follows carries **أَذْبَحُكَ** itself:
+⚠️ **Same roots — but not the same scene, and the difference matters more than
+the likeness.** There is **no dream anywhere in the Hebrew text**: God commands
+Abraham directly (22:1–2), and **the son is never told**. Isaac asks *"where is
+the lamb?"* and receives an answer that can be heard two ways. In the Qur'an the
+son **knows and consents**; in Genesis he **asks and is not answered**.
+
+The root **ر أ ي** is genuinely shared by **יִרְאֶה** and **أرى**, but the
+subject differs: in the Qur'an *Ibrāhīm* sees a dream; in Genesis *God* "sees",
+i.e. provides. One root, two jobs.
+
+And the verse that follows carries **أَذْبَحُكَ** itself:
 
 > **הַמִּזְבֵּחַ** ← ז־ב־ח = **ذ ب ح** → **مَذْبَح** — *the altar is the place-of-slaughter.*
 
