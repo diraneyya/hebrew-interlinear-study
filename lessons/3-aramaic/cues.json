@@ -1,0 +1,507 @@
+{
+  "cues": [
+    {
+      "type": "verse",
+      "time": 2.575,
+      "lines": [
+        {
+          "role": "he",
+          "text": "חֶפְצֵנוּ"
+        },
+        {
+          "role": "translit",
+          "text": "خِفْتْسينو"
+        },
+        {
+          "role": "gloss",
+          "text": "\"our desire\" — the word you asked about"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 17.882,
+      "lines": [
+        {
+          "role": "sy",
+          "text": "חֲפַט"
+        },
+        {
+          "role": "translit",
+          "text": "خَفَط"
+        },
+        {
+          "role": "gloss",
+          "text": "Aramaic — the witness that settles it"
+        }
+      ]
+    },
+    {
+      "type": "overlay",
+      "time": 43.535,
+      "title": "The family, in one breath",
+      "lines": [
+        "Hebrew and Aramaic are sisters — the Northwest Semitic branch",
+        "Arabic is their cousin, off a branch of its own",
+        "But the cousin is the one who kept the old sounds"
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 80.79,
+      "entries": [
+        {
+          "lang": "sy",
+          "word": "אֲרָמִית"
+        },
+        {
+          "lang": "he",
+          "word": "עִבְרִית"
+        },
+        {
+          "lang": "ar",
+          "word": "العَرَبِيَّة"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 93.448,
+      "entries": [
+        {
+          "lang": "sy",
+          "word": "אֲרָמָיָא"
+        },
+        {
+          "lang": "en",
+          "word": "Aramaic — still spoken today"
+        },
+        {
+          "lang": "ar",
+          "word": "لَهْجاتٌ حَيَّةٌ في مَعلولا وطورعَبدين"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 117.597,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "אָלֶף בֵּית"
+        },
+        {
+          "lang": "ar",
+          "word": "أَبْجَدِيَّة"
+        },
+        {
+          "lang": "en",
+          "word": "both your alphabets are Aramaic's children"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 135.585,
+      "lines": [
+        {
+          "role": "sy",
+          "text": "אלף · בית · גמל · דלת"
+        },
+        {
+          "role": "ar",
+          "text": "أ · ب · ج · د"
+        },
+        {
+          "role": "gloss",
+          "text": "Aramaic → Nabataean → Arabic"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 160.248,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "צ"
+        },
+        {
+          "lang": "ar",
+          "word": "ص · ض · ظ"
+        },
+        {
+          "lang": "en",
+          "word": "ONE Hebrew letter, THREE of yours"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 184.662,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "ח"
+        },
+        {
+          "lang": "ar",
+          "word": "ح · خ"
+        },
+        {
+          "lang": "en",
+          "word": "and one Hebrew letter for TWO of yours"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 205.409,
+      "lines": [
+        {
+          "role": "title",
+          "text": "The tiebreaker"
+        },
+        {
+          "role": "pair",
+          "text": "ص → צ  ·  צ"
+        },
+        {
+          "role": "pair",
+          "text": "ض → צ  ·  ע"
+        },
+        {
+          "role": "pair",
+          "text": "ظ → צ  ·  ט"
+        },
+        {
+          "role": "note",
+          "text": "Arabic · Hebrew · Aramaic"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 231.659,
+      "lines": [
+        {
+          "role": "ar",
+          "text": "صَوْم"
+        },
+        {
+          "role": "he",
+          "text": "צוֹם"
+        },
+        {
+          "role": "sy",
+          "text": "צַוְמָא"
+        },
+        {
+          "role": "gloss",
+          "text": "to fast — your ṣād stayed צ in both"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 249.364,
+      "phrase": "צַוְמָא",
+      "lang": "sy",
+      "gloss": "fasting, in Aramaic",
+      "new": "",
+      "read": "صَوْما"
+    },
+    {
+      "type": "verse",
+      "time": 255.891,
+      "lines": [
+        {
+          "role": "ar",
+          "text": "أَرْض"
+        },
+        {
+          "role": "he",
+          "text": "אֶרֶץ"
+        },
+        {
+          "role": "sy",
+          "text": "אַרְעָא"
+        },
+        {
+          "role": "gloss",
+          "text": "earth — your ḍād went to ע in Aramaic"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 286.9,
+      "phrase": "אַרְעָא",
+      "lang": "sy",
+      "gloss": "the earth, in Aramaic — أرض",
+      "new": "אַרְעָא",
+      "read": "أَرْعا"
+    },
+    {
+      "type": "verse",
+      "time": 293.066,
+      "lines": [
+        {
+          "role": "ar",
+          "text": "ظِلّ"
+        },
+        {
+          "role": "he",
+          "text": "צֵל"
+        },
+        {
+          "role": "sy",
+          "text": "טְלָלָא"
+        },
+        {
+          "role": "gloss",
+          "text": "shadow — your ẓāʾ went to ט in Aramaic"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 324.532,
+      "phrase": "טְלָלָא",
+      "lang": "sy",
+      "gloss": "the shadow, in Aramaic — ظلّ",
+      "new": "",
+      "read": "طْلالا"
+    },
+    {
+      "type": "verse",
+      "time": 330.89,
+      "lines": [
+        {
+          "role": "title",
+          "text": "So the rule is"
+        },
+        {
+          "role": "pair",
+          "text": "Aramaic צ  ⇒  ص"
+        },
+        {
+          "role": "pair",
+          "text": "Aramaic ע  ⇒  ض"
+        },
+        {
+          "role": "pair",
+          "text": "Aramaic ט  ⇒  ظ"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 359.644,
+      "lines": [
+        {
+          "role": "he",
+          "text": "חֶפְצֵנוּ"
+        },
+        {
+          "role": "translit",
+          "text": "خِفْتْسينو"
+        },
+        {
+          "role": "gloss",
+          "text": "our desire — root ח · פ · צ"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 378.171,
+      "lines": [
+        {
+          "role": "sy",
+          "text": "חֲפַט"
+        },
+        {
+          "role": "he",
+          "text": "חֶפְצֵנוּ"
+        },
+        {
+          "role": "ar",
+          "text": "حِفْظ"
+        },
+        {
+          "role": "gloss",
+          "text": "the ṭet decides it"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 391.828,
+      "phrase": "חֲפַט",
+      "lang": "sy",
+      "gloss": "to be diligent, to apply oneself",
+      "new": "חֲפַט",
+      "read": "خَفَط"
+    },
+    {
+      "type": "vocab",
+      "time": 428.36,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "חֵפֶץ"
+        },
+        {
+          "lang": "ar",
+          "word": "حِفْظ"
+        },
+        {
+          "lang": "en",
+          "word": "desire ↔ guarding — the gap"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 453.091,
+      "lines": [
+        {
+          "role": "sy",
+          "text": "חֲפַט"
+        },
+        {
+          "role": "gloss",
+          "text": "to be diligent · to apply oneself · to take pains · to urge on"
+        },
+        {
+          "role": "note",
+          "text": "the middle term"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 468.161,
+      "lines": [
+        {
+          "role": "he",
+          "text": "חֵפֶץ  ←  *intent  →  حِفْظ"
+        },
+        {
+          "role": "sy",
+          "text": "חֲפַט"
+        },
+        {
+          "role": "gloss",
+          "text": "Hebrew took it inward. Arabic took it outward."
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 493.146,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "حَفيظة"
+        },
+        {
+          "lang": "en",
+          "word": "zeal, protective ardour — the feeling, not the filing"
+        },
+        {
+          "lang": "he",
+          "word": "חֵפֶץ"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 521.409,
+      "lines": [
+        {
+          "role": "he",
+          "text": "לִמְחוֹז חֶפְצֵנוּ"
+        },
+        {
+          "role": "translit",
+          "text": "لِمْخوز خِفْتْسينو"
+        },
+        {
+          "role": "gloss",
+          "text": "to the haven we are set upon"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 545.476,
+      "phrase": "לִמְחוֹז חֶפְצֵנוּ",
+      "lang": "he",
+      "gloss": "to the haven of our desire",
+      "new": "",
+      "read": "لِمْخوز خِفْتْسينو"
+    },
+    {
+      "type": "vocab",
+      "time": 554.042,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "חֶפְצֵנוּ"
+        },
+        {
+          "lang": "ar",
+          "word": "حِفْظُنا"
+        },
+        {
+          "lang": "sy",
+          "word": "חֲפַט"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "time": 0.062,
+      "level": 2,
+      "title": "One. A voice you have not heard"
+    },
+    {
+      "time": 39.861,
+      "level": 2,
+      "title": "Two. Three sisters, and which is closest to which"
+    },
+    {
+      "time": 114.71,
+      "level": 2,
+      "title": "Three. The twist you did not expect"
+    },
+    {
+      "time": 157.51,
+      "level": 2,
+      "title": "Four. Why the third witness matters"
+    },
+    {
+      "time": 224.159,
+      "level": 2,
+      "title": "Five. Three witness words"
+    },
+    {
+      "time": 357.394,
+      "level": 2,
+      "title": "Six. Now the argument"
+    },
+    {
+      "time": 425.997,
+      "level": 2,
+      "title": "Seven. But what did it MEAN"
+    },
+    {
+      "time": 518.896,
+      "level": 2,
+      "title": "Eight. What the line actually says"
+    }
+  ]
+}

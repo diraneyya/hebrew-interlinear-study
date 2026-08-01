@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Traveller's Prayer, Part 2 — how the verbs are built</title>
+<style>
+:root { --bg:#1a1a1a; --fg:#f0f0f0; --accent:#4a9eff; --dim:rgba(255,255,255,0.6); }
+* { box-sizing:border-box; margin:0; padding:0; }
+html, body { height:100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg); color: var(--fg);
+  display: flex; flex-direction: column;
+}
+header { padding: 0.7rem 2rem 0.25rem; display:flex; flex-direction:column; gap:0.15rem; }
+.doc-title { font-size: 0.9rem; font-weight: 500; opacity: 0.6; letter-spacing: 0.02em; }
+.section-ribbon { font-size: 1.05rem; font-weight: 500; color: var(--accent); min-height: 1.4em; }
+main {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 0.75rem 2rem; gap: 0.5rem; min-height: 0;
+  position: relative;
+}
+#stage {
+  flex: 1; width: 100%; max-width: 1200px;
+  display: flex; align-items: center; justify-content: center;
+  background: #000; border-radius: 12px; overflow: hidden;
+  min-height: 40vh; position: relative;
+}
+#stage img {
+  max-width: 100%; max-height: 75vh; object-fit: contain;
+  opacity: 0; transition: opacity 0.35s ease;
+  transform-origin: center center;
+}
+/* When rotated 90 or 270 deg, image's pre-rotation width becomes the visible height. */
+#stage img.rot-90, #stage img.rot-270 {
+  max-width: 75vh; max-height: 92%;
+}
+#stage img.visible { opacity: 1; }
+.fallback {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 2rem; gap: 1rem;
+  color: var(--fg); width: 100%; height: 100%;
+}
+.fallback .section-big {
+  font-size: 2.2rem; font-weight: 500; opacity: 0.85;
+  max-width: 90%; line-height: 1.25;
+}
+.fallback .hint {
+  font-size: 0.95rem; color: var(--dim); opacity: 0.6;
+}
+.overlay {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: 100%; height: 100%; padding: 2rem; gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(74,158,255,0.08), rgba(74,158,255,0.02));
+}
+.overlay .ov-title {
+  font-size: 1.8rem; font-weight: 500; color: var(--accent); text-align: center;
+}
+.overlay .ov-lines {
+  display: flex; flex-direction: column; gap: 0.85rem; align-items: center;
+}
+.overlay .ov-line {
+  font-size: 1.7rem; font-weight: 400; opacity: 0.95;
+  font-variant-numeric: tabular-nums;
+}
+#caption {
+  font-size: 0.9rem; color: var(--dim);
+  text-align: center; min-height: 1.2em; max-width: 1100px;
+}
+footer {
+  padding: 0.75rem 2rem 1.25rem;
+  display: flex; flex-direction: column; gap: 0.5rem;
+  background: rgba(255,255,255,0.04);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+#scrubber {
+  width: 100%; height: 5px; background: rgba(255,255,255,0.15);
+  border-radius: 3px; cursor: pointer; position: relative;
+}
+#scrubber-fill {
+  height: 100%; background: var(--accent); border-radius: 3px;
+  width: 0%; pointer-events: none;
+}
+#scrubber-marks {
+  position: absolute; top: 0; left: 0; right: 0; height: 100%;
+  pointer-events: none;
+}
+.cue-mark {
+  position: absolute; top: -3px; width: 2px; height: 11px;
+  background: rgba(255,255,255,0.45); border-radius: 1px;
+  cursor: pointer; pointer-events: auto;
+}
+.cue-mark::before {
+  content: ""; position: absolute;
+  top: -10px; bottom: -10px; left: -7px; right: -7px;
+}
+.cue-mark:hover { background: var(--accent); width: 3px; }
+.cue-mark.overlay-mark { background: rgba(255,200,100,0.65); }
+.cue-mark.overlay-mark:hover { background: rgb(255,200,100); }
+.cue-mark.vocab-mark { background: rgba(199,155,240,0.7); }
+.cue-mark.vocab-mark:hover { background: rgb(199,155,240); }
+.cue-mark.drill-mark { background: rgba(240,168,104,0.75); }
+.cue-mark.drill-mark:hover { background: rgb(240,168,104); }
+.cue-mark.verse-mark { background: rgba(232,197,71,0.7); }
+.cue-mark.verse-mark:hover { background: rgb(232,197,71); }
+.cue-mark.gap-mark { background: rgba(255,90,90,0.85); }
+.cue-mark.gap-mark:hover { background: rgb(255,90,90); }
+#scrubber-marks { pointer-events: none; }
+#scrubber-marks .cue-mark { pointer-events: auto; }
+/* Vocabulary card — color-coded to match the narration voices */
+.vocab-card {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: 100%; height: 100%; padding: 2rem; gap: 0.9rem;
+  background: linear-gradient(135deg, rgba(199,155,240,0.10), rgba(199,155,240,0.02));
+}
+.vocab-row {
+  display: flex; align-items: baseline; gap: 0.9rem;
+  font-size: 2rem; font-weight: 500;
+}
+.vocab-row .vocab-lang {
+  font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.06em; opacity: 0.85;
+  min-width: 2.2em; text-align: right;
+}
+.vocab-row .vocab-word { font-weight: 500; }
+.vocab-lang-nl, .vocab-row.lang-nl .vocab-word { color: #f0a868; }
+.vocab-lang-de, .vocab-row.lang-de .vocab-word { color: #7ec77e; }
+.vocab-lang-en, .vocab-row.lang-en .vocab-word { color: #4a9eff; }
+.vocab-lang-ar, .vocab-row.lang-ar .vocab-word { color: #c89bf0; }
+.vocab-lang-es, .vocab-row.lang-es .vocab-word { color: #ff6b6b; }
+.vocab-lang-he, .vocab-row.lang-he .vocab-word { color: #e8c547; }
+.vocab-row.lang-he .vocab-lang { color: #e8c547; }
+.vocab-lang-sy, .vocab-row.lang-sy .vocab-word { color: #4fd1c5; }
+.vocab-row.lang-sy .vocab-lang { color: #4fd1c5; }
+.vocab-row.lang-nl .vocab-lang { color: #f0a868; }
+.vocab-row.lang-de .vocab-lang { color: #7ec77e; }
+.vocab-row.lang-en .vocab-lang { color: #4a9eff; }
+.vocab-row.lang-ar .vocab-lang { color: #c89bf0; }
+.vocab-row.lang-es .vocab-lang { color: #ff6b6b; }
+/* Verse slide — one line of scripture/song in its own script, a readable
+   transliteration under it, and a gloss. Wraps; sized to fit long lines. */
+.verse-slide {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: 100%; height: 100%; padding: 2rem 2.5rem; gap: 1.1rem; text-align: center;
+  background: linear-gradient(135deg, rgba(232,197,71,0.09), rgba(200,155,240,0.04));
+}
+.verse-line { max-width: 94%; line-height: 1.55; }
+.verse-line.role-he { color: #e8c547; direction: rtl; font-size: 2.15rem; font-weight: 500; }
+.verse-line.role-ar { color: #c89bf0; direction: rtl; font-size: 2.15rem; font-weight: 500; }
+.verse-line.role-sy { color: #4fd1c5; direction: rtl; font-size: 2.15rem; font-weight: 500; }
+.verse-line.role-translit { color: #c89bf0; direction: rtl; font-size: 2.15rem; font-weight: 500; }
+.verse-line.role-roman { color: #9aa4b2; font-size: 1.15rem; font-style: italic; letter-spacing: 0.02em; }
+.verse-line.role-gloss { color: #4a9eff; font-size: 1.3rem; font-weight: 500; }
+.verse-line.role-note { color: #8b93a0; font-size: 1.05rem; }
+/* A mapping row (e.g. "ש → س"): forced LTR so the pair reads left-to-right even
+   though both glyphs are RTL scripts. Isolated single letters place correctly. */
+.verse-line.role-title { color: #fff; font-size: 1.35rem; font-weight: 700;
+  letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.3rem; }
+.verse-line.role-pair { direction: ltr; font-size: 2rem; font-weight: 600;
+  color: #e8c547; line-height: 1.35; }
+.verse-slide .role-pair + .role-pair { margin-top: -0.35rem; }
+.verse-rule { width: 42%; height: 1px; background: rgba(255,255,255,0.13); }
+@media (max-width: 900px) {
+  .verse-line.role-he, .verse-line.role-ar, .verse-line.role-translit { font-size: 1.5rem; }
+  .verse-line.role-gloss { font-size: 1.05rem; }
+  .verse-line.role-roman, .verse-line.role-note { font-size: 0.92rem; }
+}
+/* Drill card — one rung of a speak-along build-up. The NEW chunk is highlighted. */
+.drill-card {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: 100%; height: 100%; gap: 1.1rem; text-align: center; padding: 2rem;
+}
+.drill-phrase { font-size: 2.9rem; font-weight: 700; line-height: 1.3; max-width: 92%; color: #f0a868; }
+.drill-card[data-lang="he"] .drill-phrase { color: #e8c547; direction: rtl; }
+.drill-card[data-lang="sy"] .drill-phrase { color: #4fd1c5; direction: rtl; }
+.drill-card[data-lang="ar"] .drill-phrase { color: #c89bf0; direction: rtl; }
+.drill-card[data-lang="de"] .drill-phrase { color: #7ec77e; }
+.drill-card[data-lang="es"] .drill-phrase { color: #ff6b6b; }
+.drill-card[data-lang="en"] .drill-phrase { color: #4a9eff; }
+.drill-phrase .new {
+  color: #fff; background: rgba(255,255,255,0.14);
+  border-bottom: 3px solid currentColor; border-radius: 4px; padding: 0 0.15em;
+}
+.drill-read { font-size: 2.1rem; font-weight: 500; color: #c89bf0; direction: rtl; max-width: 92%; }
+.drill-gloss { font-size: 1.35rem; color: #9aa4b2; font-style: italic; max-width: 88%; }
+.drill-hint {
+  font-size: 0.9rem; color: #8b93a0; letter-spacing: 0.09em;
+  text-transform: uppercase; opacity: 0.75;
+}
+/* "Your turn" badge — a compact pill that does NOT occlude the card. Driven
+   purely by playback position, because the pause is real silence in the MP3. */
+#pause-overlay {
+  position: absolute; top: 1.1rem; left: 50%; transform: translateX(-50%);
+  z-index: 80; display: none; flex-direction: column; align-items: center; gap: 0.5rem;
+  padding: 0.55rem 1.1rem; border-radius: 999px;
+  background: rgba(232,197,71,0.14); border: 1px solid rgba(232,197,71,0.55);
+  box-shadow: 0 2px 14px rgba(0,0,0,0.35);
+}
+#pause-overlay.visible { display: flex; animation: pause-pop 0.18s ease; }
+@keyframes pause-pop { from { opacity: 0; transform: translateX(-50%) translateY(-6px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+.pause-row { display: flex; align-items: center; gap: 0.5rem; }
+.pause-icon { font-size: 1.2rem; }
+.pause-prompt { font-size: 1.05rem; font-weight: 600; color: #e8c547; }
+.pause-bar { width: 180px; height: 5px; border-radius: 3px; background: rgba(255,255,255,0.16); overflow: hidden; }
+.pause-bar > i { display: block; height: 100%; width: 100%; background: #e8c547; transform-origin: left; transform: scaleX(1); }
+@media (max-width: 900px) {
+  .drill-phrase { font-size: 1.9rem; } .drill-read { font-size: 1.4rem; }
+  .drill-gloss { font-size: 1rem; } .pause-bar { width: 120px; }
+}
+/* Gap slide — a visual the author declared but hasn't sourced yet */
+.gap-slide {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: 100%; height: 100%; padding: 2rem; gap: 1rem; text-align: center;
+  background: repeating-linear-gradient(45deg,
+    rgba(255,90,90,0.06), rgba(255,90,90,0.06) 12px,
+    rgba(255,90,90,0.02) 12px, rgba(255,90,90,0.02) 24px);
+  border: 2px dashed rgba(255,90,90,0.5); border-radius: 12px;
+}
+.gap-slide .gap-tag {
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em;
+  color: #ff7a7a; text-transform: uppercase;
+}
+.gap-slide .gap-text {
+  font-size: 1.6rem; font-weight: 500; opacity: 0.92; max-width: 85%; line-height: 1.3;
+}
+.gap-slide .gap-meta {
+  font-size: 0.9rem; color: var(--dim); opacity: 0.7; max-width: 80%;
+}
+#cue-preview {
+  position: fixed;
+  z-index: 100;
+  background: rgba(20,20,22,0.97);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 8px;
+  max-width: 280px;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  display: none;
+  font-size: 0.82rem;
+}
+#cue-preview.visible { display: block; }
+#cue-preview img {
+  display: block;
+  max-width: 100%;
+  max-height: 160px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+#cue-preview img.rot-90, #cue-preview img.rot-270 {
+  max-width: 160px; max-height: 100%;
+}
+#cue-preview .preview-caption {
+  color: var(--fg); line-height: 1.3; opacity: 0.95;
+}
+#cue-preview .preview-time {
+  color: var(--accent); font-variant-numeric: tabular-nums;
+  font-size: 0.75rem; margin-top: 4px; opacity: 0.85;
+}
+#cue-preview .preview-overlay-title {
+  color: rgb(255,200,100); font-weight: 500; margin-bottom: 4px;
+}
+#cue-preview .preview-overlay-line {
+  opacity: 0.9; margin-bottom: 2px;
+}
+.controls {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0.5rem; flex-wrap: wrap;
+}
+button {
+  background: rgba(255,255,255,0.08);
+  color: var(--fg);
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s;
+  font-family: inherit;
+}
+button:hover { background: rgba(255,255,255,0.16); }
+button:active { transform: scale(0.97); }
+button.primary {
+  background: var(--accent); border-color: var(--accent);
+  font-weight: 500; min-width: 80px;
+}
+button.primary:hover { background: #6db1ff; }
+.time-info {
+  font-size: 0.82rem; color: var(--dim); text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.cue-counter {
+  font-size: 0.82rem; color: var(--dim); text-align: center;
+}
+audio { display: none; }
+/* Subtitle-style transcript shown while non-base-voice audio plays.
+   Anchored to bottom of <main>, color-coded by language. Outside #stage so
+   render() clearing stage.innerHTML doesn't blow it away. */
+#transcript {
+  position: absolute; left: 50%; bottom: 2.5rem;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.85);
+  padding: 0.6rem 1.2rem; border-radius: 10px;
+  font-size: 1.4rem; font-weight: 500; line-height: 1.35;
+  max-width: 92%; text-align: center;
+  pointer-events: none; z-index: 50;
+  opacity: 0; transition: opacity 0.18s ease;
+  white-space: pre-wrap;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+#transcript.visible { opacity: 1; }
+#transcript[data-lang="nl"] { color: #f0a868; border: 1px solid rgba(240,168,104,0.4); }
+#transcript[data-lang="de"] { color: #7ec77e; border: 1px solid rgba(126,199,126,0.4); }
+#transcript[data-lang="ar"] { color: #c89bf0; border: 1px solid rgba(200,155,240,0.4); direction: rtl; font-size: 1.6rem; }
+#transcript[data-lang="en"] { color: #4a9eff; border: 1px solid rgba(74,158,255,0.4); }
+#transcript[data-lang="es"] { color: #ff6b6b; border: 1px solid rgba(255,107,107,0.4); }
+#transcript[data-lang="he"] { color: #e8c547; border: 1px solid rgba(232,197,71,0.4); direction: rtl; font-size: 1.6rem; }
+#transcript[data-lang="sy"] { color: #4fd1c5; border: 1px solid rgba(79,209,197,0.4); direction: rtl; font-size: 1.6rem; }
+@media (max-width: 600px) {
+  header, footer, main { padding-left: 1rem; padding-right: 1rem; }
+  button { padding: 0.45rem 0.7rem; font-size: 0.88rem; }
+  .fallback .section-big { font-size: 1.5rem; }
+  .overlay .ov-title { font-size: 1.3rem; }
+  .overlay .ov-line { font-size: 1.2rem; }
+  #transcript { font-size: 1.05rem; padding: 0.45rem 0.8rem; bottom: 0.7rem; }
+  #transcript[data-lang="ar"] { font-size: 1.25rem; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="doc-title">תְּפִלַּת הַדֶּרֶךְ · Part 2 — the machinery 🜂</div>
+  <div class="section-ribbon" id="section-ribbon">&nbsp;</div>
+</header>
+<main>
+  <div id="stage"></div>
+  <div id="transcript"></div>
+  <div id="pause-overlay">
+    <div class="pause-row"><span class="pause-icon">🎙️</span><span class="pause-prompt">Your turn — say it</span></div>
+    <div class="pause-bar"><i id="pause-bar-fill"></i></div>
+  </div>
+  <div id="caption"></div>
+</main>
+<footer>
+  <div id="scrubber">
+    <div id="scrubber-fill"></div>
+    <div id="scrubber-marks"></div>
+  </div>
+  <div class="controls">
+    <button id="prev-cue" title="Previous cue (↑)">⏮ Cue</button>
+    <button id="back-10" title="Back 10 seconds (←)">−10s</button>
+    <button id="play-pause" class="primary">Play</button>
+    <button id="fwd-10" title="Forward 10 seconds (→)">+10s</button>
+    <button id="next-cue" title="Next cue (↓)">Cue ⏭</button>
+  </div>
+  <div class="time-info">
+    <span id="t-current">0:00</span> / <span id="t-total">--:--</span>
+    <span style="margin: 0 0.5rem; opacity: 0.4;">·</span>
+    <span class="cue-counter" id="cue-counter">cue –</span>
+  </div>
+</footer>
+<div id="cue-preview"></div>
+<audio id="audio" src="audio.mp3" preload="auto"></audio>
+<script>
+const audio = document.getElementById("audio");
+const stage = document.getElementById("stage");
+const caption = document.getElementById("caption");
+const playPause = document.getElementById("play-pause");
+const scrubberFill = document.getElementById("scrubber-fill");
+const scrubber = document.getElementById("scrubber");
+const scrubberMarks = document.getElementById("scrubber-marks");
+const tCurrent = document.getElementById("t-current");
+const tTotal = document.getElementById("t-total");
+const cueCounter = document.getElementById("cue-counter");
+const sectionRibbon = document.getElementById("section-ribbon");
+
+const cues = [{"type": "verse", "time": 24.064, "lines": [{"role": "he", "text": "שָׁלוֹם"}, {"role": "ar", "text": "سَلام"}, {"role": "gloss", "text": "one more decoder — this time for the vowels"}]}, {"type": "vocab", "time": 33.714, "entries": [{"lang": "ar", "word": "سَلامٌ"}, {"lang": "he", "word": "שָׁלוֹם"}, {"lang": "en", "word": "ā → ō"}]}, {"type": "vocab", "time": 55.212, "entries": [{"lang": "ar", "word": "عالَمٌ"}, {"lang": "he", "word": "עוֹלָם"}, {"lang": "en", "word": "ā → ō, again"}]}, {"type": "vocab", "time": 64.203, "entries": [{"lang": "ar", "word": "لِسانٌ"}, {"lang": "he", "word": "לָשׁוֹן"}, {"lang": "en", "word": "tongue — ā → ō"}]}, {"type": "drill", "time": 79.876, "phrase": "לָשׁוֹן", "lang": "he", "gloss": "tongue, language — لِسان", "new": "", "read": "لاشون"}, {"type": "verse", "time": 86.463, "lines": [{"role": "title", "text": "The vowel ring"}, {"role": "pair", "text": "ā  →  ō"}, {"role": "pair", "text": "سَلام  →  שָׁלוֹם"}, {"role": "pair", "text": "عالَم  →  עוֹלָם"}, {"role": "pair", "text": "لِسان  →  לָשׁוֹן"}]}, {"type": "vocab", "time": 98.801, "entries": [{"lang": "ar", "word": "سامِعٌ"}, {"lang": "he", "word": "שׁוֹמֵעַ"}, {"lang": "en", "word": "one who hears — فاعِل = קוֹטֵל"}]}, {"type": "vocab", "time": 132.219, "entries": [{"lang": "ar", "word": "كاتِبٌ"}, {"lang": "he", "word": "כּוֹתֵב"}, {"lang": "en", "word": "one who writes"}]}, {"type": "drill", "time": 148.3, "phrase": "שׁוֹמֵעַ", "lang": "he", "gloss": "one who hears — سامِع", "new": "", "read": "شوميعَ"}, {"type": "vocab", "time": 164.977, "entries": [{"lang": "he", "word": "וְ"}, {"lang": "ar", "word": "وَ"}, {"lang": "en", "word": "and"}]}, {"type": "vocab", "time": 181.42, "entries": [{"lang": "he", "word": "הַ"}, {"lang": "ar", "word": "الْ"}, {"lang": "en", "word": "the"}]}, {"type": "vocab", "time": 193.42, "entries": [{"lang": "he", "word": "בְּ"}, {"lang": "ar", "word": "بِ"}, {"lang": "en", "word": "in · with"}]}, {"type": "vocab", "time": 206.308, "entries": [{"lang": "he", "word": "לְ"}, {"lang": "ar", "word": "لِ"}, {"lang": "en", "word": "to · for"}]}, {"type": "vocab", "time": 217.132, "entries": [{"lang": "he", "word": "כְּ"}, {"lang": "ar", "word": "كَ"}, {"lang": "en", "word": "like · as"}]}, {"type": "vocab", "time": 224.788, "entries": [{"lang": "he", "word": "מִ"}, {"lang": "ar", "word": "مِنْ"}, {"lang": "en", "word": "from"}]}, {"type": "vocab", "time": 236.919, "entries": [{"lang": "he", "word": "כִּי"}, {"lang": "ar", "word": "كَيْ"}, {"lang": "en", "word": "for · because"}]}, {"type": "verse", "time": 246.826, "lines": [{"role": "title", "text": "Seven connectors"}, {"role": "pair", "text": "וְ → وَ"}, {"role": "pair", "text": "הַ → الْ"}, {"role": "pair", "text": "בְּ → بِ"}, {"role": "pair", "text": "לְ → لِ"}, {"role": "pair", "text": "כְּ → كَ"}, {"role": "pair", "text": "מִ → مِنْ"}, {"role": "pair", "text": "כִּי → كَيْ"}]}, {"type": "drill", "time": 253.324, "phrase": "בְּכָל", "lang": "he", "gloss": "in every — بِكُلّ", "new": "", "read": "بِخول"}, {"type": "drill", "time": 259.876, "phrase": "מִכַּף כָּל", "lang": "he", "gloss": "from the palm of every — مِن كَفِّ كُلّ", "new": "", "read": "مِكَّف كول"}, {"type": "vocab", "time": 270.66, "entries": [{"lang": "he", "word": "א · ת · י · נ"}, {"lang": "ar", "word": "أ · ت · ي · ن"}, {"lang": "en", "word": "the prefix set — identical"}]}, {"type": "vocab", "time": 285.772, "entries": [{"lang": "ar", "word": "أَسْمَعُ"}, {"lang": "he", "word": "אֶשְׁמַע"}, {"lang": "en", "word": "I hear"}]}, {"type": "drill", "time": 294.772, "phrase": "אֶשְׁמַע", "lang": "he", "gloss": "I hear — أَسمَعُ", "new": "", "read": "إشمَع"}, {"type": "vocab", "time": 301.274, "entries": [{"lang": "ar", "word": "تَسْمَعُ"}, {"lang": "he", "word": "תִּשְׁמַע"}, {"lang": "en", "word": "you hear"}]}, {"type": "drill", "time": 314.044, "phrase": "תִּשְׁמַע", "lang": "he", "gloss": "you hear — تَسمَعُ", "new": "תִּ", "read": "تِشمَع"}, {"type": "vocab", "time": 320.474, "entries": [{"lang": "ar", "word": "يَسْمَعُ"}, {"lang": "he", "word": "יִשְׁמַע"}, {"lang": "en", "word": "he hears"}]}, {"type": "drill", "time": 329.476, "phrase": "יִשְׁמַע", "lang": "he", "gloss": "he hears — يَسمَعُ", "new": "יִ", "read": "يِشمَع"}, {"type": "vocab", "time": 335.978, "entries": [{"lang": "ar", "word": "نَسْمَعُ"}, {"lang": "he", "word": "נִשְׁמַע"}, {"lang": "en", "word": "we hear"}]}, {"type": "drill", "time": 345.22, "phrase": "נִשְׁמַע", "lang": "he", "gloss": "we hear — نَسمَعُ", "new": "נִ", "read": "نِشمَع"}, {"type": "verse", "time": 351.797, "lines": [{"role": "title", "text": "The prefix set"}, {"role": "pair", "text": "אֶשְׁמַע  ·  أَسْمَعُ"}, {"role": "pair", "text": "תִּשְׁמַע  ·  تَسْمَعُ"}, {"role": "pair", "text": "יִשְׁמַע  ·  يَسْمَعُ"}, {"role": "pair", "text": "נִשְׁמַע  ·  نَسْمَعُ"}]}, {"type": "vocab", "time": 372.29, "entries": [{"lang": "he", "word": "־נוּ"}, {"lang": "ar", "word": "ـنا"}, {"lang": "en", "word": "us"}]}, {"type": "vocab", "time": 383.626, "entries": [{"lang": "he", "word": "תַּצִּילֵנוּ"}, {"lang": "ar", "word": "أَنْجِنا"}, {"lang": "en", "word": "save us"}]}, {"type": "drill", "time": 397.324, "phrase": "וְתַצִּילֵנוּ", "lang": "he", "gloss": "and save us — وأَنْجِنا", "new": "־נוּ", "read": "ڤِتَتْسيلينو"}, {"type": "vocab", "time": 405.122, "entries": [{"lang": "he", "word": "־נִי"}, {"lang": "ar", "word": "ـني"}, {"lang": "en", "word": "me"}]}, {"type": "vocab", "time": 417.219, "entries": [{"lang": "he", "word": "־ךָ"}, {"lang": "ar", "word": "ـكَ"}, {"lang": "en", "word": "your · you"}]}, {"type": "drill", "time": 429.964, "phrase": "בְּעֵינֶיךָ", "lang": "he", "gloss": "in Your eyes — بِعَينَيكَ", "new": "", "read": "بِعينيخا"}, {"type": "vocab", "time": 439.931, "entries": [{"lang": "he", "word": "תּוֹלִיכֵנוּ"}, {"lang": "ar", "word": "أَفْعَلَ"}, {"lang": "en", "word": "make us walk — the causative"}]}, {"type": "vocab", "time": 461.26, "entries": [{"lang": "he", "word": "תַּצְעִידֵנוּ"}, {"lang": "ar", "word": "أَصْعِدْنا"}, {"lang": "en", "word": "make us step"}]}, {"type": "vocab", "time": 468.796, "entries": [{"lang": "he", "word": "תַּגִּיעֵנוּ"}, {"lang": "ar", "word": "بَلِّغْنا"}, {"lang": "en", "word": "make us arrive"}]}, {"type": "verse", "time": 482.948, "lines": [{"role": "title", "text": "Every verb is a causative"}, {"role": "pair", "text": "תּוֹלִיכֵנוּ  ·  make us walk"}, {"role": "pair", "text": "תַּצְעִידֵנוּ  ·  make us step"}, {"role": "pair", "text": "תַּדְרִיכֵנוּ  ·  make us tread"}, {"role": "pair", "text": "תַּגִּיעֵנוּ  ·  make us arrive"}, {"role": "pair", "text": "תַּצִּילֵנוּ  ·  make us escape"}]}, {"type": "drill", "time": 503.332, "phrase": "שֶׁתּוֹלִיכֵנוּ לְשָׁלוֹם", "lang": "he", "gloss": "that You make us walk in peace", "new": "", "read": "شِتّوليخينو لِشالوم"}, {"type": "vocab", "time": 514.355, "entries": [{"lang": "he", "word": "וְתִשְׁלַח"}, {"lang": "ar", "word": "سِلاحٌ"}, {"lang": "en", "word": "to send ↔ a weapon"}]}, {"type": "vocab", "time": 549.431, "entries": [{"lang": "he", "word": "פֶּרַע"}, {"lang": "ar", "word": "فَرْعٌ"}, {"lang": "en", "word": "loose hair ↔ a branch"}]}, {"type": "verse", "time": 588.898, "lines": [{"role": "ar", "text": "اللَّهُمَّ إِنّا نَسْأَلُكَ في سَفَرِنا هٰذا البِرَّ والتَّقوى"}, {"role": "gloss", "text": "O God, we ask You on this journey of ours for righteousness and piety"}]}, {"type": "vocab", "time": 599.836, "entries": [{"lang": "ar", "word": "نَسْأَلُكَ"}, {"lang": "he", "word": "נִשְׁאַל"}, {"lang": "en", "word": "nun on the front, kaf on the back"}]}, {"type": "verse", "time": 620.978, "lines": [{"role": "ar", "text": "أَعوذُ بِكَ مِنْ وَعْثاءِ السَّفَرِ"}, {"role": "he", "text": "וְתַצִּילֵנוּ מִכַּף כָּל אוֹיֵב"}, {"role": "gloss", "text": "I take refuge in You FROM… · and save us FROM…"}]}, {"type": "vocab", "time": 645.524, "entries": [{"lang": "ar", "word": "هَوِّنْ عَلَيْنا السَّفَر"}, {"lang": "he", "word": "תּוֹלִיכֵנוּ לְשָׁלוֹם"}, {"lang": "en", "word": "make it easy FOR US · make us walk in peace"}]}, {"type": "verse", "time": 676.86, "lines": [{"role": "ar", "text": "هَوِّنْ عَلَيْنا  ·  أَنْجِنا  ·  بَلِّغْنا"}, {"role": "he", "text": "תּוֹלִיכֵנוּ  ·  תַּצִּילֵנוּ  ·  תַּגִּיעֵנוּ"}, {"role": "gloss", "text": "the same three requests, in the same grammar"}]}, {"type": "drill", "time": 706.54, "phrase": "וְתַגִּיעֵנוּ לְשָׁלוֹם", "lang": "he", "gloss": "and bring us there in peace", "new": "", "read": "ڤِتَگّيعينو لِشالوم"}, {"type": "drill", "time": 716.236, "phrase": "תּוֹלִיכֵנוּ לְשָׁלוֹם וְתַצִּילֵנוּ מִכָּל רָע", "lang": "he", "gloss": "lead us in peace and save us from all harm", "new": "", "read": "توليخينو لِشالوم ڤِتَتْسيلينو مِكّول راع"}, {"type": "vocab", "time": 745.012, "entries": [{"lang": "he", "word": "שָׁלוֹם"}, {"lang": "ar", "word": "سَلامٌ"}, {"lang": "en", "word": "go in peace"}]}];
+const sections = [{"time": 0.062, "level": 2, "title": "One. What Part One left out"}, {"time": 31.839, "level": 2, "title": "Two. The vowel ring"}, {"time": 96.301, "level": 2, "title": "Three. The showcase — the doer"}, {"time": 161.839, "level": 2, "title": "Four. The connectors — seven single letters"}, {"time": 266.835, "level": 2, "title": "Five. The conjugation — four letters you already know"}, {"time": 369.777, "level": 2, "title": "Six. The endings — us, me, you"}, {"time": 436.706, "level": 2, "title": "Seven. The secret shape of the whole prayer"}, {"time": 512.042, "level": 2, "title": "Eight. Two roots that split"}, {"time": 586.623, "level": 2, "title": "Nine. Now the other prayer"}, {"time": 704.907, "level": 2, "title": "Ten. Say it"}];
+const langSegments = [{"start": 19.2, "end": 21.264, "lang": "ar", "text": "دُعاءُ السَّفَر"}, {"start": 37.56, "end": 39.336, "lang": "ar", "text": "سَلامٌ."}, {"start": 41.112, "end": 42.816, "lang": "he", "text": "שָׁלוֹם."}, {"start": 43.512, "end": 45.0, "lang": "ar", "text": "ألِف"}, {"start": 57.672, "end": 59.448, "lang": "ar", "text": "عالَمٌ."}, {"start": 60.264, "end": 62.04, "lang": "he", "text": "עוֹלָם."}, {"start": 69.072, "end": 70.848, "lang": "ar", "text": "لِسانٌ."}, {"start": 72.624, "end": 74.424, "lang": "he", "text": "לָשׁוֹן."}, {"start": 76.2, "end": 77.976, "lang": "ar", "text": "لِسانٌ"}, {"start": 77.976, "end": 79.776, "lang": "he", "text": "לָשׁוֹן."}, {"start": 79.776, "end": 81.576, "lang": "he", "text": "לָשׁוֹן"}, {"start": 84.576, "end": 86.376, "lang": "he", "text": "לָשׁוֹן"}, {"start": 105.696, "end": 107.352, "lang": "ar", "text": "فاعِل"}, {"start": 109.128, "end": 110.904, "lang": "ar", "text": "سامِعٌ"}, {"start": 116.184, "end": 117.864, "lang": "he", "text": "שׁוֹמֵעַ."}, {"start": 120.192, "end": 121.968, "lang": "ar", "text": "سامِعٌ"}, {"start": 121.968, "end": 123.744, "lang": "he", "text": "שׁוֹמֵעַ."}, {"start": 134.808, "end": 136.584, "lang": "ar", "text": "كاتِبٌ"}, {"start": 136.584, "end": 138.36, "lang": "he", "text": "כּוֹתֵב."}, {"start": 140.136, "end": 141.912, "lang": "ar", "text": "حافِظٌ"}, {"start": 143.712, "end": 145.584, "lang": "he", "text": "חוֹפֵץ"}, {"start": 148.2, "end": 149.976, "lang": "he", "text": "שׁוֹמֵעַ"}, {"start": 152.976, "end": 154.752, "lang": "he", "text": "שׁוֹמֵעַ"}, {"start": 155.448, "end": 157.104, "lang": "ar", "text": "فاعِل"}, {"start": 157.776, "end": 159.552, "lang": "he", "text": "קוֹטֵל"}, {"start": 175.992, "end": 177.768, "lang": "he", "text": "וְ"}, {"start": 179.544, "end": 181.32, "lang": "ar", "text": "وَ"}, {"start": 181.32, "end": 183.096, "lang": "he", "text": "הַ"}, {"start": 184.872, "end": 186.648, "lang": "ar", "text": "الْ"}, {"start": 189.0, "end": 190.872, "lang": "he", "text": "הַדֶּרֶךְ"}, {"start": 191.544, "end": 193.32, "lang": "ar", "text": "الطَّريق"}, {"start": 193.32, "end": 195.096, "lang": "he", "text": "בְּ"}, {"start": 196.872, "end": 198.648, "lang": "ar", "text": "بِ"}, {"start": 200.424, "end": 202.2, "lang": "he", "text": "בְּכָל"}, {"start": 202.2, "end": 203.976, "lang": "ar", "text": "بِكُلِّ."}, {"start": 206.208, "end": 207.984, "lang": "he", "text": "לְ"}, {"start": 209.76, "end": 211.536, "lang": "ar", "text": "لِ"}, {"start": 213.312, "end": 215.184, "lang": "he", "text": "לְשָׁלוֹם"}, {"start": 215.184, "end": 217.032, "lang": "ar", "text": "لِسَلامٍ."}, {"start": 217.032, "end": 218.808, "lang": "he", "text": "כְּ"}, {"start": 220.584, "end": 222.36, "lang": "ar", "text": "كَ"}, {"start": 224.688, "end": 226.464, "lang": "he", "text": "מִ"}, {"start": 228.24, "end": 230.016, "lang": "ar", "text": "مِنْ"}, {"start": 233.184, "end": 235.032, "lang": "he", "text": "מִכַּף"}, {"start": 235.032, "end": 236.832, "lang": "ar", "text": "مِنْ كَفِّ."}, {"start": 240.096, "end": 241.872, "lang": "he", "text": "כִּי"}, {"start": 244.8, "end": 246.576, "lang": "ar", "text": "كَيْ"}, {"start": 253.224, "end": 255.0, "lang": "he", "text": "בְּכָל"}, {"start": 258.0, "end": 259.776, "lang": "he", "text": "בְּכָל"}, {"start": 259.776, "end": 261.768, "lang": "he", "text": "מִכַּף כָּל"}, {"start": 264.768, "end": 266.76, "lang": "he", "text": "מִכַּף כָּל"}, {"start": 287.472, "end": 289.248, "lang": "ar", "text": "أَسْمَعُ."}, {"start": 291.024, "end": 292.704, "lang": "he", "text": "אֶשְׁמַע."}, {"start": 294.672, "end": 296.448, "lang": "he", "text": "אֶשְׁמַע"}, {"start": 299.448, "end": 301.224, "lang": "he", "text": "אֶשְׁמַע"}, {"start": 303.048, "end": 304.824, "lang": "ar", "text": "تَسْمَعُ."}, {"start": 306.6, "end": 308.376, "lang": "he", "text": "תִּשְׁמַע."}, {"start": 313.944, "end": 315.72, "lang": "he", "text": "תִּשְׁמַע"}, {"start": 318.72, "end": 320.424, "lang": "he", "text": "תִּשְׁמַע"}, {"start": 322.272, "end": 324.048, "lang": "ar", "text": "يَسْمَعُ."}, {"start": 325.824, "end": 327.6, "lang": "he", "text": "יִשְׁמַע."}, {"start": 329.376, "end": 331.152, "lang": "he", "text": "יִשְׁמַע"}, {"start": 334.152, "end": 335.928, "lang": "he", "text": "יִשְׁמַע"}, {"start": 337.992, "end": 339.768, "lang": "ar", "text": "نَسْمَعُ."}, {"start": 341.544, "end": 343.32, "lang": "he", "text": "נִשְׁמַע."}, {"start": 345.12, "end": 346.896, "lang": "he", "text": "נִשְׁמַע"}, {"start": 349.896, "end": 351.672, "lang": "he", "text": "נִשְׁמַע"}, {"start": 354.528, "end": 359.064, "lang": "he", "text": "אֶשְׁמַע, תִּשְׁמַע, יִשְׁמַע, נִשְׁמַע."}, {"start": 360.84, "end": 365.04, "lang": "ar", "text": "أَسْمَعُ، تَسْمَعُ، يَسْمَعُ، نَسْمَعُ."}, {"start": 379.272, "end": 380.76, "lang": "he", "text": "־נוּ"}, {"start": 381.6, "end": 383.376, "lang": "ar", "text": "ـنا"}, {"start": 386.592, "end": 388.488, "lang": "he", "text": "תַּצִּילֵנוּ"}, {"start": 391.824, "end": 393.6, "lang": "ar", "text": "أَنْجِنا"}, {"start": 395.904, "end": 397.224, "lang": "ar", "text": "ـنا"}, {"start": 397.224, "end": 399.144, "lang": "he", "text": "וְתַצִּילֵנוּ"}, {"start": 403.152, "end": 405.072, "lang": "he", "text": "וְתַצִּילֵנוּ"}, {"start": 406.848, "end": 408.624, "lang": "he", "text": "־נִי"}, {"start": 410.4, "end": 412.176, "lang": "ar", "text": "ـني"}, {"start": 413.952, "end": 415.944, "lang": "he", "text": "וְתִתְּנֵנִי"}, {"start": 418.344, "end": 420.12, "lang": "he", "text": "־ךָ"}, {"start": 421.896, "end": 423.024, "lang": "ar", "text": "ـكَ"}, {"start": 425.28, "end": 427.272, "lang": "he", "text": "מִלְּפָנֶיךָ"}, {"start": 427.968, "end": 429.864, "lang": "he", "text": "בְּעֵינֶיךָ"}, {"start": 429.864, "end": 431.76, "lang": "he", "text": "בְּעֵינֶיךָ"}, {"start": 434.76, "end": 436.656, "lang": "he", "text": "בְּעֵינֶיךָ"}, {"start": 447.12, "end": 449.136, "lang": "he", "text": "שֶׁתּוֹלִיכֵנוּ"}, {"start": 457.608, "end": 459.384, "lang": "ar", "text": "أَفْعَلَ"}, {"start": 461.16, "end": 463.2, "lang": "he", "text": "וְתַצְעִידֵנוּ"}, {"start": 464.976, "end": 466.968, "lang": "he", "text": "וְתַדְרִיכֵנוּ"}, {"start": 468.696, "end": 470.616, "lang": "he", "text": "וְתַגִּיעֵנוּ"}, {"start": 472.8, "end": 474.552, "lang": "ar", "text": "بَلِّغْنا"}, {"start": 476.328, "end": 478.248, "lang": "he", "text": "וְתַצִּילֵנוּ"}, {"start": 503.232, "end": 505.608, "lang": "he", "text": "שֶׁתּוֹלִיכֵנוּ לְשָׁלוֹם"}, {"start": 509.616, "end": 511.992, "lang": "he", "text": "שֶׁתּוֹלִיכֵנוּ לְשָׁלוֹם"}, {"start": 522.384, "end": 524.16, "lang": "he", "text": "שָׁלַח"}, {"start": 526.176, "end": 527.952, "lang": "ar", "text": "سِلاح"}, {"start": 533.544, "end": 535.368, "lang": "he", "text": "שֶׁלַח"}, {"start": 555.264, "end": 557.04, "lang": "he", "text": "פֶּרַע"}, {"start": 565.272, "end": 567.048, "lang": "ar", "text": "فَرْع"}, {"start": 591.504, "end": 595.872, "lang": "ar", "text": "اللَّهُمَّ إِنّا نَسْأَلُكَ في سَفَرِنا هٰذا البِرَّ والتَّقوى."}, {"start": 597.96, "end": 599.736, "lang": "ar", "text": "نَسْأَلُكَ"}, {"start": 599.736, "end": 601.512, "lang": "ar", "text": "نَسْأَلُكَ"}, {"start": 602.256, "end": 604.032, "lang": "ar", "text": "نون"}, {"start": 605.808, "end": 607.584, "lang": "ar", "text": "ـكَ"}, {"start": 614.28, "end": 616.128, "lang": "he", "text": "נִשְׁאַל"}, {"start": 617.952, "end": 619.728, "lang": "he", "text": "נ"}, {"start": 624.744, "end": 627.648, "lang": "ar", "text": "أَعوذُ بِكَ مِنْ وَعْثاءِ السَّفَر."}, {"start": 629.424, "end": 632.352, "lang": "he", "text": "וְתַצִּילֵנוּ מִכַּף כָּל אוֹיֵב."}, {"start": 635.496, "end": 637.272, "lang": "ar", "text": "مِنْ"}, {"start": 639.048, "end": 640.824, "lang": "he", "text": "מִ"}, {"start": 648.312, "end": 652.2, "lang": "ar", "text": "اللَّهُمَّ اطْوِ لَنَا البُعْدَ وهَوِّنْ عَلَيْنَا السَّفَر"}, {"start": 658.512, "end": 660.288, "lang": "ar", "text": "لَنا"}, {"start": 662.064, "end": 664.44, "lang": "he", "text": "שֶׁתּוֹלִיכֵנוּ לְשָׁלוֹם"}, {"start": 666.696, "end": 668.472, "lang": "he", "text": "־נוּ"}, {"start": 680.256, "end": 682.272, "lang": "ar", "text": "هَوِّنْ عَلَيْنا"}, {"start": 682.272, "end": 684.12, "lang": "he", "text": "תּוֹלִיכֵנוּ."}, {"start": 685.896, "end": 687.672, "lang": "ar", "text": "أَنْجِنا"}, {"start": 687.672, "end": 689.568, "lang": "he", "text": "תַּצִּילֵנוּ."}, {"start": 691.344, "end": 693.096, "lang": "ar", "text": "بَلِّغْنا"}, {"start": 693.096, "end": 694.944, "lang": "he", "text": "תַּגִּיעֵנוּ."}, {"start": 706.44, "end": 708.792, "lang": "he", "text": "וְתַגִּיעֵנוּ לְשָׁלוֹם"}, {"start": 713.784, "end": 716.136, "lang": "he", "text": "וְתַגִּיעֵנוּ לְשָׁלוֹם"}, {"start": 716.136, "end": 719.76, "lang": "he", "text": "תּוֹלִיכֵנוּ לְשָׁלוֹם וְתַצִּילֵנוּ מִכָּל רָע"}, {"start": 726.768, "end": 730.392, "lang": "he", "text": "תּוֹלִיכֵנוּ לְשָׁלוֹם וְתַצִּילֵנוּ מִכָּל רָע"}, {"start": 738.36, "end": 740.136, "lang": "he", "text": "לְ"}, {"start": 744.912, "end": 746.616, "lang": "he", "text": "שָׁלוֹם."}, {"start": 746.616, "end": 748.392, "lang": "ar", "text": "سَلامٌ."}];
+const pauseSegments = [{"start": 81.576, "end": 84.576}, {"start": 149.976, "end": 152.976}, {"start": 255.0, "end": 258.0}, {"start": 261.768, "end": 264.768}, {"start": 296.448, "end": 299.448}, {"start": 315.72, "end": 318.72}, {"start": 331.152, "end": 334.152}, {"start": 346.896, "end": 349.896}, {"start": 399.144, "end": 403.152}, {"start": 431.76, "end": 434.76}, {"start": 505.608, "end": 509.616}, {"start": 708.792, "end": 713.784}, {"start": 719.76, "end": 726.768}];
+const docTitle = "The Traveller's Prayer, Part 2 — how the verbs are built";
+const transcript = document.getElementById("transcript");
+let currentCueIdx = -2;  // sentinel so initial render fires
+let currentSectionIdx = -2;
+let currentTranscriptKey = "";  // "start|end|lang" of the active segment
+
+// "Your turn" badge — driven entirely by playback position. The pause is real
+// silence baked into the audio, so there is no audio.pause()/setTimeout: we just
+// show the badge while currentTime is inside a pause segment and shrink the bar
+// by the fraction remaining. Works identically playing, scrubbed, or replayed.
+const pauseOverlay = document.getElementById("pause-overlay");
+const pauseBarFill = document.getElementById("pause-bar-fill");
+const findActivePause = t => {
+  for (let i = 0; i < pauseSegments.length; i++) {
+    const p = pauseSegments[i];
+    if (t >= p.start && t <= p.end) return p;
+  }
+  return null;
+};
+const updatePause = () => {
+  const p = findActivePause(audio.currentTime);
+  if (p) {
+    const frac = Math.max(0, Math.min(1, (p.end - audio.currentTime) / (p.end - p.start)));
+    pauseBarFill.style.transform = `scaleX(${frac})`;
+    pauseOverlay.classList.add("visible");
+  } else {
+    pauseOverlay.classList.remove("visible");
+  }
+};
+// Two drivers, deliberately. rAF gives a smooth countdown bar while the tab is
+// visible — but browsers throttle rAF to ZERO in a background tab, and a
+// 27-minute audio lesson spends most of its life backgrounded. That alone would
+// freeze the badge in whatever state it was in when you switched away (stuck on
+// screen, or never appearing). `timeupdate` keeps firing (~4 Hz) regardless, so
+// it guarantees correctness; rAF only adds smoothness on top.
+const rafPause = () => { updatePause(); requestAnimationFrame(rafPause); };
+if (pauseSegments.length) {
+  audio.addEventListener("timeupdate", updatePause);
+  audio.addEventListener("seeked", updatePause);
+  requestAnimationFrame(rafPause);
+}
+
+const findActiveLangSegment = t => {
+  // Linear scan — fine for hundreds of segments at audio-update rates.
+  // A 0.1s margin on each side smooths over float-precision edges.
+  for (let i = 0; i < langSegments.length; i++) {
+    const s = langSegments[i];
+    if (t >= s.start - 0.05 && t <= s.end + 0.05) return s;
+  }
+  return null;
+};
+
+const updateTranscript = t => {
+  const seg = findActiveLangSegment(t);
+  const key = seg ? `${seg.start}|${seg.end}|${seg.lang}` : "";
+  if (key === currentTranscriptKey) return;
+  currentTranscriptKey = key;
+  if (seg) {
+    transcript.textContent = seg.text;
+    transcript.dataset.lang = seg.lang;
+    transcript.classList.add("visible");
+  } else {
+    transcript.classList.remove("visible");
+  }
+};
+
+const fmt = s => {
+  if (!isFinite(s)) return "--:--";
+  const m = Math.floor(s / 60), sec = Math.floor(s % 60);
+  return `${m}:${sec.toString().padStart(2, "0")}`;
+};
+
+const findCueIndex = t => {
+  let idx = -1;
+  for (let i = 0; i < cues.length; i++) {
+    if (cues[i].time <= t) idx = i; else break;
+  }
+  return idx;
+};
+
+const findSectionIndex = t => {
+  let idx = -1;
+  for (let i = 0; i < sections.length; i++) {
+    if (sections[i].time <= t) idx = i; else break;
+  }
+  return idx;
+};
+
+const renderFallback = () => {
+  const sec = currentSectionIdx >= 0 ? sections[currentSectionIdx] : null;
+  stage.innerHTML = "";
+  const div = document.createElement("div");
+  div.className = "fallback";
+  const big = document.createElement("div");
+  big.className = "section-big";
+  big.dir = "auto";
+  big.textContent = sec ? sec.title : docTitle;
+  div.appendChild(big);
+  stage.appendChild(div);
+  caption.textContent = "";
+};
+
+const renderImage = cue => {
+  stage.innerHTML = "";
+  const img = new Image();
+  img.alt = cue.caption || "";
+  const rot = (cue.rotation || 0) % 360;
+  if (rot === 90) img.classList.add("rot-90");
+  else if (rot === 180) img.classList.add("rot-180");
+  else if (rot === 270) img.classList.add("rot-270");
+  if (rot) img.style.transform = `rotate(${rot}deg)`;
+  img.onload = () => {
+    stage.appendChild(img);
+    requestAnimationFrame(() => img.classList.add("visible"));
+  };
+  img.src = cue.image;
+  caption.textContent = cue.caption || "";
+};
+
+const renderOverlay = cue => {
+  stage.innerHTML = "";
+  const ov = document.createElement("div");
+  ov.className = "overlay";
+  if (cue.title) {
+    const t = document.createElement("div");
+    t.className = "ov-title";
+    t.textContent = cue.title;
+    ov.appendChild(t);
+  }
+  if (cue.lines && cue.lines.length) {
+    const wrap = document.createElement("div");
+    wrap.className = "ov-lines";
+    for (const ln of cue.lines) {
+      const l = document.createElement("div");
+      l.className = "ov-line";
+      l.textContent = ln;
+      wrap.appendChild(l);
+    }
+    ov.appendChild(wrap);
+  }
+  stage.appendChild(ov);
+  caption.textContent = "";
+};
+
+const renderVocab = cue => {
+  stage.innerHTML = "";
+  const card = document.createElement("div");
+  card.className = "vocab-card";
+  for (const e of (cue.entries || [])) {
+    const row = document.createElement("div");
+    row.className = "vocab-row lang-" + e.lang;
+    const lang = document.createElement("span");
+    lang.className = "vocab-lang vocab-lang-" + e.lang;
+    lang.textContent = LANG_LABEL[e.lang] || e.lang;
+    const word = document.createElement("span");
+    word.className = "vocab-word";
+    word.textContent = e.word;
+    if (e.lang === "ar" || e.lang === "he") { word.dir = "rtl"; word.style.fontSize = "1.3em"; }
+    row.appendChild(lang);
+    row.appendChild(word);
+    card.appendChild(row);
+  }
+  stage.appendChild(card);
+  caption.textContent = "";
+};
+
+// Drill card — the phrase for this rung, with the NEW chunk highlighted, a
+// readable transliteration, and the meaning. Stays up through the spoken
+// phrase, the "your turn" silence, and the confirm repeat.
+const renderDrill = cue => {
+  stage.innerHTML = "";
+  const card = document.createElement("div");
+  card.className = "drill-card";
+  card.dataset.lang = cue.lang || "en";
+  const phrase = document.createElement("div");
+  phrase.className = "drill-phrase";
+  const text = cue.phrase || "";
+  const nw = (cue.new || "").trim();
+  const at = nw ? text.indexOf(nw) : -1;
+  if (at !== -1) {
+    phrase.appendChild(document.createTextNode(text.slice(0, at)));
+    const span = document.createElement("span");
+    span.className = "new";
+    span.textContent = nw;
+    phrase.appendChild(span);
+    phrase.appendChild(document.createTextNode(text.slice(at + nw.length)));
+  } else {
+    phrase.textContent = text;
+  }
+  card.appendChild(phrase);
+  if (cue.read) {
+    const r = document.createElement("div");
+    r.className = "drill-read";
+    r.dir = "rtl";
+    r.textContent = cue.read;
+    card.appendChild(r);
+  }
+  if (cue.gloss) {
+    const g = document.createElement("div");
+    g.className = "drill-gloss";
+    g.textContent = cue.gloss;
+    card.appendChild(g);
+  }
+  const hint = document.createElement("div");
+  hint.className = "drill-hint";
+  hint.textContent = "listen · then repeat";
+  card.appendChild(hint);
+  stage.appendChild(card);
+  caption.textContent = "";
+};
+
+const RTL_ROLES = { he: 1, ar: 1, sy: 1, translit: 1 };
+// "sy" is our internal code for Aramaic — display it as ARAM, not SY.
+const LANG_LABEL = { sy: "aram" };
+const renderVerse = cue => {
+  stage.innerHTML = "";
+  const v = document.createElement("div");
+  v.className = "verse-slide";
+  const lines = cue.lines || [];
+  lines.forEach((l, i) => {
+    const el = document.createElement("div");
+    el.className = "verse-line role-" + l.role;
+    el.textContent = l.text;
+    if (RTL_ROLES[l.role]) el.dir = "rtl";
+    else if (l.role === "pair") el.dir = "ltr";
+    v.appendChild(el);
+    // Hairline between the scripts and the meaning, once.
+    const next = lines[i + 1];
+    if (next && RTL_ROLES[l.role] && !RTL_ROLES[next.role]) {
+      const r = document.createElement("div");
+      r.className = "verse-rule";
+      v.appendChild(r);
+    }
+  });
+  stage.appendChild(v);
+  caption.textContent = "";
+};
+
+const renderGap = cue => {
+  stage.innerHTML = "";
+  const g = document.createElement("div");
+  g.className = "gap-slide";
+  const tag = document.createElement("div");
+  tag.className = "gap-tag";
+  tag.textContent = cue.tier ? "Visual needed · tier " + cue.tier : "Visual needed";
+  g.appendChild(tag);
+  const txt = document.createElement("div");
+  txt.className = "gap-text";
+  txt.textContent = cue.gap_text || "";
+  g.appendChild(txt);
+  if (cue.note) {
+    const n = document.createElement("div");
+    n.className = "gap-meta";
+    n.textContent = cue.note;
+    g.appendChild(n);
+  }
+  stage.appendChild(g);
+  caption.textContent = "";
+};
+
+const setCue = (idx, sectionIdx) => {
+  const sectionChanged = sectionIdx !== currentSectionIdx;
+  // Stale-cue detection: an active cue placed before the current section
+  // began is lingering from a previous section — drop it so the section
+  // title shows instead of a stale image.
+  let effectiveIdx = idx;
+  if (effectiveIdx >= 0 && sectionIdx >= 0 &&
+      cues[effectiveIdx].time < sections[sectionIdx].time - 0.01) {
+    effectiveIdx = -1;
+  }
+  const cueChanged = effectiveIdx !== currentCueIdx;
+  if (sectionChanged) {
+    currentSectionIdx = sectionIdx;
+    const sec = sectionIdx >= 0 ? sections[sectionIdx] : null;
+    sectionRibbon.textContent = sec ? sec.title : "";
+  }
+  if (!cueChanged && !sectionChanged) return;
+  // When cue is unchanged but only section advanced AND there is an active
+  // cue, nothing to re-render.
+  if (!cueChanged && effectiveIdx >= 0) return;
+
+  currentCueIdx = effectiveIdx;
+  if (effectiveIdx < 0) {
+    renderFallback();
+    cueCounter.textContent = "cue –";
+    return;
+  }
+  const cue = cues[effectiveIdx];
+  if (cue.type === "overlay") renderOverlay(cue);
+  else if (cue.type === "vocab") renderVocab(cue);
+  else if (cue.type === "verse") renderVerse(cue);
+  else if (cue.type === "drill") renderDrill(cue);
+  else if (cue.type === "gap") renderGap(cue);
+  else renderImage(cue);
+  cueCounter.textContent = `cue ${effectiveIdx + 1} / ${cues.length}`;
+};
+
+const cuePreview = document.getElementById("cue-preview");
+
+const renderPreviewForCue = (cue) => {
+  cuePreview.innerHTML = "";
+  if (cue.type === "image") {
+    const img = new Image();
+    img.src = cue.image;
+    img.alt = cue.caption || "";
+    const rot = (cue.rotation || 0) % 360;
+    if (rot === 90) img.classList.add("rot-90");
+    else if (rot === 270) img.classList.add("rot-270");
+    if (rot) img.style.transform = `rotate(${rot}deg)`;
+    cuePreview.appendChild(img);
+    if (cue.caption) {
+      const cap = document.createElement("div");
+      cap.className = "preview-caption";
+      cap.textContent = cue.caption;
+      cuePreview.appendChild(cap);
+    }
+  } else if (cue.type === "overlay") {
+    if (cue.title) {
+      const t = document.createElement("div");
+      t.className = "preview-overlay-title";
+      t.textContent = cue.title;
+      cuePreview.appendChild(t);
+    }
+    for (const ln of (cue.lines || [])) {
+      const l = document.createElement("div");
+      l.className = "preview-overlay-line";
+      l.textContent = ln;
+      cuePreview.appendChild(l);
+    }
+  } else if (cue.type === "drill") {
+    const el = document.createElement("div");
+    el.className = "preview-overlay-line";
+    el.style.fontSize = "0.95rem";
+    el.dir = "auto";
+    el.textContent = cue.phrase || "";
+    cuePreview.appendChild(el);
+    if (cue.gloss) {
+      const g = document.createElement("div");
+      g.className = "preview-caption";
+      g.textContent = cue.gloss;
+      cuePreview.appendChild(g);
+    }
+  } else if (cue.type === "verse") {
+    for (const l of (cue.lines || [])) {
+      const el = document.createElement("div");
+      el.className = "preview-overlay-line verse-line role-" + l.role;
+      el.style.fontSize = "0.85rem";
+      el.textContent = l.text;
+      if (RTL_ROLES[l.role]) el.dir = "rtl";
+      cuePreview.appendChild(el);
+    }
+  } else if (cue.type === "vocab") {
+    for (const e of (cue.entries || [])) {
+      const l = document.createElement("div");
+      l.className = "preview-overlay-line vocab-lang-" + e.lang;
+      l.textContent = e.lang + "  " + e.word;
+      if (e.lang === "ar") l.dir = "rtl";
+      cuePreview.appendChild(l);
+    }
+  } else if (cue.type === "gap") {
+    const t = document.createElement("div");
+    t.className = "preview-overlay-title";
+    t.style.color = "#ff7a7a";
+    t.textContent = cue.tier ? "Visual needed · tier " + cue.tier : "Visual needed";
+    cuePreview.appendChild(t);
+    const l = document.createElement("div");
+    l.className = "preview-overlay-line";
+    l.textContent = cue.gap_text || "";
+    cuePreview.appendChild(l);
+    if (cue.note) {
+      const n = document.createElement("div");
+      n.className = "preview-overlay-line";
+      n.style.opacity = "0.6";
+      n.textContent = cue.note;
+      cuePreview.appendChild(n);
+    }
+  }
+  const tInfo = document.createElement("div");
+  tInfo.className = "preview-time";
+  tInfo.textContent = fmt(cue.time);
+  cuePreview.appendChild(tInfo);
+};
+
+const positionPreviewAt = (mark) => {
+  const rect = mark.getBoundingClientRect();
+  cuePreview.classList.add("visible");
+  // Measure after rendering, before final placement
+  const pw = cuePreview.offsetWidth;
+  const ph = cuePreview.offsetHeight;
+  let left = rect.left + rect.width / 2 - pw / 2;
+  left = Math.max(8, Math.min(window.innerWidth - pw - 8, left));
+  let top = rect.top - ph - 10;
+  if (top < 8) top = rect.bottom + 10;
+  cuePreview.style.left = left + "px";
+  cuePreview.style.top = top + "px";
+};
+
+const showPreview = (idx, mark) => {
+  if (idx < 0 || idx >= cues.length) return;
+  renderPreviewForCue(cues[idx]);
+  positionPreviewAt(mark);
+};
+
+const hidePreview = () => {
+  cuePreview.classList.remove("visible");
+  cuePreview.innerHTML = "";
+};
+
+audio.addEventListener("loadedmetadata", () => {
+  tTotal.textContent = fmt(audio.duration);
+  for (let i = 0; i < cues.length; i++) {
+    const cue = cues[i];
+    const mark = document.createElement("div");
+    mark.className = "cue-mark" + (cue.type === "overlay" ? " overlay-mark" : cue.type === "vocab" ? " vocab-mark" : cue.type === "verse" ? " verse-mark" : cue.type === "drill" ? " drill-mark" : cue.type === "gap" ? " gap-mark" : "");
+    mark.style.left = (100 * cue.time / audio.duration) + "%";
+    mark.dataset.cueIndex = String(i);
+    mark.title = (cue.caption || cue.title || cue.gap_text || "") + " — " + fmt(cue.time);
+    mark.addEventListener("mouseenter", () => showPreview(i, mark));
+    mark.addEventListener("mouseleave", hidePreview);
+    mark.addEventListener("click", e => {
+      e.stopPropagation();
+      audio.currentTime = cue.time;
+    });
+    scrubberMarks.appendChild(mark);
+  }
+});
+
+audio.addEventListener("timeupdate", () => {
+  const t = audio.currentTime;
+  scrubberFill.style.width = (100 * t / audio.duration) + "%";
+  tCurrent.textContent = fmt(t);
+  setCue(findCueIndex(t), findSectionIndex(t));
+  updateTranscript(t);
+});
+
+audio.addEventListener("play", () => playPause.textContent = "Pause");
+audio.addEventListener("pause", () => playPause.textContent = "Play");
+audio.addEventListener("ended", () => playPause.textContent = "Play");
+
+playPause.addEventListener("click", () => {
+  if (audio.paused) audio.play(); else audio.pause();
+});
+
+document.getElementById("back-10").addEventListener("click", () => {
+  audio.currentTime = Math.max(0, audio.currentTime - 10);
+});
+document.getElementById("fwd-10").addEventListener("click", () => {
+  audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 10);
+});
+
+document.getElementById("prev-cue").addEventListener("click", () => {
+  const t = audio.currentTime;
+  const idx = findCueIndex(t - 0.5);
+  if (idx > 0) audio.currentTime = cues[idx - 1].time;
+  else if (idx === 0) audio.currentTime = cues[0].time > 0.1 ? cues[0].time : 0;
+  else if (cues.length > 0) audio.currentTime = 0;
+});
+
+document.getElementById("next-cue").addEventListener("click", () => {
+  const idx = findCueIndex(audio.currentTime);
+  if (idx + 1 < cues.length) audio.currentTime = cues[idx + 1].time;
+  else if (audio.duration) audio.currentTime = audio.duration;
+});
+
+scrubber.addEventListener("click", e => {
+  const rect = scrubber.getBoundingClientRect();
+  const frac = (e.clientX - rect.left) / rect.width;
+  if (audio.duration) audio.currentTime = frac * audio.duration;
+});
+
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+  switch (e.code) {
+    case "Space": e.preventDefault(); playPause.click(); break;
+    case "ArrowLeft": document.getElementById("back-10").click(); break;
+    case "ArrowRight": document.getElementById("fwd-10").click(); break;
+    case "ArrowUp": e.preventDefault(); document.getElementById("prev-cue").click(); break;
+    case "ArrowDown": e.preventDefault(); document.getElementById("next-cue").click(); break;
+  }
+});
+
+// Initial render before audio loads
+setCue(-1, -1);
+</script>
+</body>
+</html>

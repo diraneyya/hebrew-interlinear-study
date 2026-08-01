@@ -1,0 +1,502 @@
+{
+  "cues": [
+    {
+      "type": "vocab",
+      "time": 2.875,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "سامِعٌ"
+        },
+        {
+          "lang": "he",
+          "word": "שׁוֹמֵעַ"
+        },
+        {
+          "lang": "en",
+          "word": "Lesson 2 — you own this one"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 21.436,
+      "phrase": "רוֹאֶה",
+      "lang": "he",
+      "gloss": "one who sees",
+      "new": "",
+      "read": "روئيه",
+      "mean": "رائي"
+    },
+    {
+      "type": "drill",
+      "time": 33.892,
+      "phrase": "רוֹאֵינוּ",
+      "lang": "he",
+      "gloss": "those who see us",
+      "new": "־ֵינוּ",
+      "read": "رُوئينو",
+      "mean": "رائينا"
+    },
+    {
+      "type": "vocab",
+      "time": 52.657,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "عَينٌ"
+        },
+        {
+          "lang": "he",
+          "word": "עַיִן"
+        },
+        {
+          "lang": "en",
+          "word": "an eye"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 61.372,
+      "phrase": "עַיִן",
+      "lang": "he",
+      "gloss": "an eye",
+      "new": "",
+      "read": "عَيِن",
+      "mean": "عَين"
+    },
+    {
+      "type": "vocab",
+      "time": 71.774,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "المُثَنّى"
+        },
+        {
+          "lang": "he",
+          "word": "־ַיִם"
+        },
+        {
+          "lang": "en",
+          "word": "Hebrew has a DUAL — and only for pairs"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 87.556,
+      "phrase": "עֵינַיִם",
+      "lang": "he",
+      "gloss": "two eyes",
+      "new": "־ַיִם",
+      "read": "عينايِم",
+      "mean": "عَينان"
+    },
+    {
+      "type": "drill",
+      "time": 104.476,
+      "phrase": "יָדַיִם",
+      "lang": "he",
+      "gloss": "two hands",
+      "new": "",
+      "read": "يادايِم",
+      "mean": "يَدان"
+    },
+    {
+      "type": "vocab",
+      "time": 115.074,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "عَينانِ ← عَينَي"
+        },
+        {
+          "lang": "he",
+          "word": "עֵינַיִם ← עֵינֵי"
+        },
+        {
+          "lang": "en",
+          "word": "the ن drops · the ם drops"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 145.036,
+      "phrase": "עֵינֵי",
+      "lang": "he",
+      "gloss": "the eyes-OF",
+      "new": "עֵינֵי",
+      "read": "عينيه",
+      "mean": "عَينَي"
+    },
+    {
+      "type": "drill",
+      "time": 156.1,
+      "phrase": "בְּעֵינֵי",
+      "lang": "he",
+      "gloss": "in the eyes of",
+      "new": "בְּ",
+      "read": "بِعينيه",
+      "mean": "بِعَينَي"
+    },
+    {
+      "type": "drill",
+      "time": 170.524,
+      "phrase": "כָל",
+      "lang": "he",
+      "gloss": "every, all",
+      "new": "",
+      "read": "خول",
+      "mean": "كُلّ"
+    },
+    {
+      "type": "drill",
+      "time": 178.756,
+      "phrase": "כָל רוֹאֵינוּ",
+      "lang": "he",
+      "gloss": "all who see us",
+      "new": "כָל",
+      "read": "خول رُوئينو",
+      "mean": "كُلُّ رائينا"
+    },
+    {
+      "type": "drill",
+      "time": 187.684,
+      "phrase": "בְּעֵינֵי כָל רוֹאֵינוּ",
+      "lang": "he",
+      "gloss": "in the eyes of all who see us",
+      "new": "בְּעֵינֵי",
+      "read": "بِعينيه خول رُوئينو",
+      "mean": "بِعَينَي كُلِّ رائينا"
+    },
+    {
+      "type": "vocab",
+      "time": 205.221,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "וְ → וּ"
+        },
+        {
+          "lang": "ar",
+          "word": "وَ"
+        },
+        {
+          "lang": "en",
+          "word": "the AND that swells before a lip-letter"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 229.444,
+      "phrase": "וּלְשָׁלוֹם",
+      "lang": "he",
+      "gloss": "and for peace",
+      "new": "וּ",
+      "read": "أولْشالوم",
+      "mean": "وَلِسَلامٍ"
+    },
+    {
+      "type": "drill",
+      "time": 236.14,
+      "phrase": "וּמִכָּל",
+      "lang": "he",
+      "gloss": "and from every",
+      "new": "",
+      "read": "أومِكّول",
+      "mean": "وَمِنْ كُلِّ"
+    },
+    {
+      "type": "drill",
+      "time": 251.668,
+      "phrase": "וּבְעֵינֵי",
+      "lang": "he",
+      "gloss": "and in the eyes of",
+      "new": "וּ",
+      "read": "أوڤعينيه",
+      "mean": "وَبِعَينَي"
+    },
+    {
+      "type": "drill",
+      "time": 258.364,
+      "phrase": "וּבְעֵינֵי כָל רוֹאֵינוּ",
+      "lang": "he",
+      "gloss": "and in the eyes of all who see us",
+      "new": "",
+      "read": "أوڤعينيه خول رُوئينو",
+      "mean": "وَبِعَينَي كُلِّ رائينا"
+    },
+    {
+      "type": "verse",
+      "time": 268.144,
+      "lines": [
+        {
+          "role": "he",
+          "text": "וּבְעֵינֵי כָל רוֹאֵינוּ"
+        },
+        {
+          "role": "ar",
+          "text": "وَبِعَينَي كُلِّ رائينا"
+        },
+        {
+          "role": "gloss",
+          "text": "וּ · בְּ · עֵינֵי · כָל · רוֹאֵינוּ"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 284.306,
+      "lines": [
+        {
+          "role": "he",
+          "text": "אוֹיֵב · אוֹרֵב"
+        },
+        {
+          "role": "translit",
+          "text": "أويِڤ · أوريڤ"
+        },
+        {
+          "role": "gloss",
+          "text": "??? · ???"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 308.337,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "الَّذي يُعادي"
+        },
+        {
+          "lang": "he",
+          "word": "אוֹיֵב"
+        },
+        {
+          "lang": "en",
+          "word": "the one who DOES hostility"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 315.532,
+      "phrase": "אוֹיֵב",
+      "lang": "he",
+      "gloss": "an enemy",
+      "new": "",
+      "read": "أويِڤ",
+      "mean": "عَدُوّ"
+    },
+    {
+      "type": "vocab",
+      "time": 321.939,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "الَّذي يَكْمُنُ"
+        },
+        {
+          "lang": "he",
+          "word": "אוֹרֵב"
+        },
+        {
+          "lang": "en",
+          "word": "the one who DOES lying-in-wait"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 327.604,
+      "phrase": "אוֹרֵב",
+      "lang": "he",
+      "gloss": "an ambusher",
+      "new": "",
+      "read": "أوريڤ",
+      "mean": "كامِن"
+    },
+    {
+      "type": "drill",
+      "time": 334.06,
+      "phrase": "אוֹיֵב וְאוֹרֵב",
+      "lang": "he",
+      "gloss": "an enemy and an ambusher",
+      "new": "",
+      "read": "أويِڤ ڤِأوريڤ",
+      "mean": "عَدُوٌّ وكامِنٌ"
+    },
+    {
+      "type": "drill",
+      "time": 350.116,
+      "phrase": "מִכַּף כָּל",
+      "lang": "he",
+      "gloss": "from the palm of every",
+      "new": "",
+      "read": "مِكَّف كول",
+      "mean": "مِنْ كَفِّ كُلِّ"
+    },
+    {
+      "type": "drill",
+      "time": 357.1,
+      "phrase": "מִכַּף כָּל אוֹיֵב וְאוֹרֵב",
+      "lang": "he",
+      "gloss": "from the palm of every enemy and ambusher",
+      "new": "אוֹיֵב וְאוֹרֵב",
+      "read": "مِكَّف كول أويِڤ ڤِأوريڤ",
+      "mean": "مِنْ كَفِّ كُلِّ عَدُوٍّ وكامِنٍ"
+    },
+    {
+      "type": "drill",
+      "time": 397.9,
+      "phrase": "אוֹכֵל",
+      "lang": "he",
+      "gloss": "eating, one who eats",
+      "new": "",
+      "read": "أوخيل",
+      "mean": "آكِل"
+    },
+    {
+      "type": "vocab",
+      "time": 404.402,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "أَنا"
+        },
+        {
+          "lang": "he",
+          "word": "אֲנִי"
+        },
+        {
+          "lang": "en",
+          "word": "I — barely moved between the two"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 409.06,
+      "phrase": "אֲנִי",
+      "lang": "he",
+      "gloss": "I",
+      "new": "",
+      "read": "أني",
+      "mean": "أَنا"
+    },
+    {
+      "type": "drill",
+      "time": 414.604,
+      "phrase": "אֲנִי אוֹכֵל",
+      "lang": "he",
+      "gloss": "I am eating",
+      "new": "אֲנִי",
+      "read": "أني أوخيل",
+      "mean": "أَنا آكِلٌ"
+    },
+    {
+      "type": "drill",
+      "time": 427.588,
+      "phrase": "אֲנִי רוֹאֶה",
+      "lang": "he",
+      "gloss": "I see",
+      "new": "",
+      "read": "أني روئيه",
+      "mean": "أَنا رائٍ"
+    },
+    {
+      "type": "verse",
+      "time": 445.986,
+      "lines": [
+        {
+          "role": "ar",
+          "text": "أَعوذُ بِكَ مِنْ وَعْثاءِ السَّفَرِ"
+        },
+        {
+          "role": "he",
+          "text": "מִכַּף כָּל אוֹיֵב וְאוֹרֵב"
+        },
+        {
+          "role": "gloss",
+          "text": "I take refuge FROM · deliver us FROM"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 479.235,
+      "lines": [
+        {
+          "role": "ar",
+          "text": "وَأَلْقَيْتُ عَلَيْكَ مَحَبَّةً مِنّي"
+        },
+        {
+          "role": "he",
+          "text": "וּבְעֵינֵי כָל רוֹאֵינוּ"
+        },
+        {
+          "role": "gloss",
+          "text": "love cast upon you · in the eyes of all who see us"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 510.892,
+      "phrase": "וּבְעֵינֵי כָל רוֹאֵינוּ",
+      "lang": "he",
+      "gloss": "and in the eyes of all who see us",
+      "new": "",
+      "read": "أوڤعينيه خول رُوئينو",
+      "mean": "وَبِعَينَي كُلِّ رائينا"
+    }
+  ],
+  "sections": [
+    {
+      "time": 0.062,
+      "level": 2,
+      "title": "One. Make a word you were never taught"
+    },
+    {
+      "time": 45.019,
+      "level": 2,
+      "title": "Two. The eye"
+    },
+    {
+      "time": 111.099,
+      "level": 2,
+      "title": "Three. What happens when the dual leans on another word"
+    },
+    {
+      "time": 162.627,
+      "level": 2,
+      "title": "Four. Now join the two halves"
+    },
+    {
+      "time": 196.371,
+      "level": 2,
+      "title": "Five. The letter you have been singing for weeks"
+    },
+    {
+      "time": 274.581,
+      "level": 2,
+      "title": "Six. The mould works even when the root is a stranger"
+    },
+    {
+      "time": 374.883,
+      "level": 2,
+      "title": "Seven. Prove it outside the prayer"
+    },
+    {
+      "time": 435.098,
+      "level": 2,
+      "title": "Eight. Where your two phrases sit in your own prayer"
+    }
+  ]
+}

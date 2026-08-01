@@ -1,0 +1,883 @@
+{
+  "cues": [
+    {
+      "type": "verse",
+      "time": 24.064,
+      "lines": [
+        {
+          "role": "he",
+          "text": "שָׁלוֹם"
+        },
+        {
+          "role": "ar",
+          "text": "سَلام"
+        },
+        {
+          "role": "gloss",
+          "text": "one more decoder — this time for the vowels"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 33.714,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "سَلامٌ"
+        },
+        {
+          "lang": "he",
+          "word": "שָׁלוֹם"
+        },
+        {
+          "lang": "en",
+          "word": "ā → ō"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 55.212,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "عالَمٌ"
+        },
+        {
+          "lang": "he",
+          "word": "עוֹלָם"
+        },
+        {
+          "lang": "en",
+          "word": "ā → ō, again"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 64.203,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "لِسانٌ"
+        },
+        {
+          "lang": "he",
+          "word": "לָשׁוֹן"
+        },
+        {
+          "lang": "en",
+          "word": "tongue — ā → ō"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 79.876,
+      "phrase": "לָשׁוֹן",
+      "lang": "he",
+      "gloss": "tongue, language — لِسان",
+      "new": "",
+      "read": "لاشون"
+    },
+    {
+      "type": "verse",
+      "time": 86.463,
+      "lines": [
+        {
+          "role": "title",
+          "text": "The vowel ring"
+        },
+        {
+          "role": "pair",
+          "text": "ā  →  ō"
+        },
+        {
+          "role": "pair",
+          "text": "سَلام  →  שָׁלוֹם"
+        },
+        {
+          "role": "pair",
+          "text": "عالَم  →  עוֹלָם"
+        },
+        {
+          "role": "pair",
+          "text": "لِسان  →  לָשׁוֹן"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 98.801,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "سامِعٌ"
+        },
+        {
+          "lang": "he",
+          "word": "שׁוֹמֵעַ"
+        },
+        {
+          "lang": "en",
+          "word": "one who hears — فاعِل = קוֹטֵל"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 132.219,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "كاتِبٌ"
+        },
+        {
+          "lang": "he",
+          "word": "כּוֹתֵב"
+        },
+        {
+          "lang": "en",
+          "word": "one who writes"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 148.3,
+      "phrase": "שׁוֹמֵעַ",
+      "lang": "he",
+      "gloss": "one who hears — سامِع",
+      "new": "",
+      "read": "شوميعَ"
+    },
+    {
+      "type": "vocab",
+      "time": 164.977,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "וְ"
+        },
+        {
+          "lang": "ar",
+          "word": "وَ"
+        },
+        {
+          "lang": "en",
+          "word": "and"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 181.42,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "הַ"
+        },
+        {
+          "lang": "ar",
+          "word": "الْ"
+        },
+        {
+          "lang": "en",
+          "word": "the"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 193.42,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "בְּ"
+        },
+        {
+          "lang": "ar",
+          "word": "بِ"
+        },
+        {
+          "lang": "en",
+          "word": "in · with"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 206.308,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "לְ"
+        },
+        {
+          "lang": "ar",
+          "word": "لِ"
+        },
+        {
+          "lang": "en",
+          "word": "to · for"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 217.132,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "כְּ"
+        },
+        {
+          "lang": "ar",
+          "word": "كَ"
+        },
+        {
+          "lang": "en",
+          "word": "like · as"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 224.788,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "מִ"
+        },
+        {
+          "lang": "ar",
+          "word": "مِنْ"
+        },
+        {
+          "lang": "en",
+          "word": "from"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 236.919,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "כִּי"
+        },
+        {
+          "lang": "ar",
+          "word": "كَيْ"
+        },
+        {
+          "lang": "en",
+          "word": "for · because"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 246.826,
+      "lines": [
+        {
+          "role": "title",
+          "text": "Seven connectors"
+        },
+        {
+          "role": "pair",
+          "text": "וְ → وَ"
+        },
+        {
+          "role": "pair",
+          "text": "הַ → الْ"
+        },
+        {
+          "role": "pair",
+          "text": "בְּ → بِ"
+        },
+        {
+          "role": "pair",
+          "text": "לְ → لِ"
+        },
+        {
+          "role": "pair",
+          "text": "כְּ → كَ"
+        },
+        {
+          "role": "pair",
+          "text": "מִ → مِنْ"
+        },
+        {
+          "role": "pair",
+          "text": "כִּי → كَيْ"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 253.324,
+      "phrase": "בְּכָל",
+      "lang": "he",
+      "gloss": "in every — بِكُلّ",
+      "new": "",
+      "read": "بِخول"
+    },
+    {
+      "type": "drill",
+      "time": 259.876,
+      "phrase": "מִכַּף כָּל",
+      "lang": "he",
+      "gloss": "from the palm of every — مِن كَفِّ كُلّ",
+      "new": "",
+      "read": "مِكَّف كول"
+    },
+    {
+      "type": "vocab",
+      "time": 270.66,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "א · ת · י · נ"
+        },
+        {
+          "lang": "ar",
+          "word": "أ · ت · ي · ن"
+        },
+        {
+          "lang": "en",
+          "word": "the prefix set — identical"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 285.772,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "أَسْمَعُ"
+        },
+        {
+          "lang": "he",
+          "word": "אֶשְׁמַע"
+        },
+        {
+          "lang": "en",
+          "word": "I hear"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 294.772,
+      "phrase": "אֶשְׁמַע",
+      "lang": "he",
+      "gloss": "I hear — أَسمَعُ",
+      "new": "",
+      "read": "إشمَع"
+    },
+    {
+      "type": "vocab",
+      "time": 301.274,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "تَسْمَعُ"
+        },
+        {
+          "lang": "he",
+          "word": "תִּשְׁמַע"
+        },
+        {
+          "lang": "en",
+          "word": "you hear"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 314.044,
+      "phrase": "תִּשְׁמַע",
+      "lang": "he",
+      "gloss": "you hear — تَسمَعُ",
+      "new": "תִּ",
+      "read": "تِشمَع"
+    },
+    {
+      "type": "vocab",
+      "time": 320.474,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "يَسْمَعُ"
+        },
+        {
+          "lang": "he",
+          "word": "יִשְׁמַע"
+        },
+        {
+          "lang": "en",
+          "word": "he hears"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 329.476,
+      "phrase": "יִשְׁמַע",
+      "lang": "he",
+      "gloss": "he hears — يَسمَعُ",
+      "new": "יִ",
+      "read": "يِشمَع"
+    },
+    {
+      "type": "vocab",
+      "time": 335.978,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "نَسْمَعُ"
+        },
+        {
+          "lang": "he",
+          "word": "נִשְׁמַע"
+        },
+        {
+          "lang": "en",
+          "word": "we hear"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 345.22,
+      "phrase": "נִשְׁמַע",
+      "lang": "he",
+      "gloss": "we hear — نَسمَعُ",
+      "new": "נִ",
+      "read": "نِشمَع"
+    },
+    {
+      "type": "verse",
+      "time": 351.797,
+      "lines": [
+        {
+          "role": "title",
+          "text": "The prefix set"
+        },
+        {
+          "role": "pair",
+          "text": "אֶשְׁמַע  ·  أَسْمَعُ"
+        },
+        {
+          "role": "pair",
+          "text": "תִּשְׁמַע  ·  تَسْمَعُ"
+        },
+        {
+          "role": "pair",
+          "text": "יִשְׁמַע  ·  يَسْمَعُ"
+        },
+        {
+          "role": "pair",
+          "text": "נִשְׁמַע  ·  نَسْمَعُ"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 372.29,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "־נוּ"
+        },
+        {
+          "lang": "ar",
+          "word": "ـنا"
+        },
+        {
+          "lang": "en",
+          "word": "us"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 383.626,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "תַּצִּילֵנוּ"
+        },
+        {
+          "lang": "ar",
+          "word": "أَنْجِنا"
+        },
+        {
+          "lang": "en",
+          "word": "save us"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 397.324,
+      "phrase": "וְתַצִּילֵנוּ",
+      "lang": "he",
+      "gloss": "and save us — وأَنْجِنا",
+      "new": "־נוּ",
+      "read": "ڤِتَتْسيلينو"
+    },
+    {
+      "type": "vocab",
+      "time": 405.122,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "־נִי"
+        },
+        {
+          "lang": "ar",
+          "word": "ـني"
+        },
+        {
+          "lang": "en",
+          "word": "me"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 417.219,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "־ךָ"
+        },
+        {
+          "lang": "ar",
+          "word": "ـكَ"
+        },
+        {
+          "lang": "en",
+          "word": "your · you"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 429.964,
+      "phrase": "בְּעֵינֶיךָ",
+      "lang": "he",
+      "gloss": "in Your eyes — بِعَينَيكَ",
+      "new": "",
+      "read": "بِعينيخا"
+    },
+    {
+      "type": "vocab",
+      "time": 439.931,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "תּוֹלִיכֵנוּ"
+        },
+        {
+          "lang": "ar",
+          "word": "أَفْعَلَ"
+        },
+        {
+          "lang": "en",
+          "word": "make us walk — the causative"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 461.26,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "תַּצְעִידֵנוּ"
+        },
+        {
+          "lang": "ar",
+          "word": "أَصْعِدْنا"
+        },
+        {
+          "lang": "en",
+          "word": "make us step"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 468.796,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "תַּגִּיעֵנוּ"
+        },
+        {
+          "lang": "ar",
+          "word": "بَلِّغْنا"
+        },
+        {
+          "lang": "en",
+          "word": "make us arrive"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 482.948,
+      "lines": [
+        {
+          "role": "title",
+          "text": "Every verb is a causative"
+        },
+        {
+          "role": "pair",
+          "text": "תּוֹלִיכֵנוּ  ·  make us walk"
+        },
+        {
+          "role": "pair",
+          "text": "תַּצְעִידֵנוּ  ·  make us step"
+        },
+        {
+          "role": "pair",
+          "text": "תַּדְרִיכֵנוּ  ·  make us tread"
+        },
+        {
+          "role": "pair",
+          "text": "תַּגִּיעֵנוּ  ·  make us arrive"
+        },
+        {
+          "role": "pair",
+          "text": "תַּצִּילֵנוּ  ·  make us escape"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 503.332,
+      "phrase": "שֶׁתּוֹלִיכֵנוּ לְשָׁלוֹם",
+      "lang": "he",
+      "gloss": "that You make us walk in peace",
+      "new": "",
+      "read": "شِتّوليخينو لِشالوم"
+    },
+    {
+      "type": "vocab",
+      "time": 514.355,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "וְתִשְׁלַח"
+        },
+        {
+          "lang": "ar",
+          "word": "سِلاحٌ"
+        },
+        {
+          "lang": "en",
+          "word": "to send ↔ a weapon"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 549.431,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "פֶּרַע"
+        },
+        {
+          "lang": "ar",
+          "word": "فَرْعٌ"
+        },
+        {
+          "lang": "en",
+          "word": "loose hair ↔ a branch"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 588.898,
+      "lines": [
+        {
+          "role": "ar",
+          "text": "اللَّهُمَّ إِنّا نَسْأَلُكَ في سَفَرِنا هٰذا البِرَّ والتَّقوى"
+        },
+        {
+          "role": "gloss",
+          "text": "O God, we ask You on this journey of ours for righteousness and piety"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 599.836,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "نَسْأَلُكَ"
+        },
+        {
+          "lang": "he",
+          "word": "נִשְׁאַל"
+        },
+        {
+          "lang": "en",
+          "word": "nun on the front, kaf on the back"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 620.978,
+      "lines": [
+        {
+          "role": "ar",
+          "text": "أَعوذُ بِكَ مِنْ وَعْثاءِ السَّفَرِ"
+        },
+        {
+          "role": "he",
+          "text": "וְתַצִּילֵנוּ מִכַּף כָּל אוֹיֵב"
+        },
+        {
+          "role": "gloss",
+          "text": "I take refuge in You FROM… · and save us FROM…"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 645.524,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "هَوِّنْ عَلَيْنا السَّفَر"
+        },
+        {
+          "lang": "he",
+          "word": "תּוֹלִיכֵנוּ לְשָׁלוֹם"
+        },
+        {
+          "lang": "en",
+          "word": "make it easy FOR US · make us walk in peace"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 676.86,
+      "lines": [
+        {
+          "role": "ar",
+          "text": "هَوِّنْ عَلَيْنا  ·  أَنْجِنا  ·  بَلِّغْنا"
+        },
+        {
+          "role": "he",
+          "text": "תּוֹלִיכֵנוּ  ·  תַּצִּילֵנוּ  ·  תַּגִּיעֵנוּ"
+        },
+        {
+          "role": "gloss",
+          "text": "the same three requests, in the same grammar"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 706.54,
+      "phrase": "וְתַגִּיעֵנוּ לְשָׁלוֹם",
+      "lang": "he",
+      "gloss": "and bring us there in peace",
+      "new": "",
+      "read": "ڤِتَگّيعينو لِشالوم"
+    },
+    {
+      "type": "drill",
+      "time": 716.236,
+      "phrase": "תּוֹלִיכֵנוּ לְשָׁלוֹם וְתַצִּילֵנוּ מִכָּל רָע",
+      "lang": "he",
+      "gloss": "lead us in peace and save us from all harm",
+      "new": "",
+      "read": "توليخينو لِشالوم ڤِتَتْسيلينو مِكّول راع"
+    },
+    {
+      "type": "vocab",
+      "time": 745.012,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "שָׁלוֹם"
+        },
+        {
+          "lang": "ar",
+          "word": "سَلامٌ"
+        },
+        {
+          "lang": "en",
+          "word": "go in peace"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "time": 0.062,
+      "level": 2,
+      "title": "One. What Part One left out"
+    },
+    {
+      "time": 31.839,
+      "level": 2,
+      "title": "Two. The vowel ring"
+    },
+    {
+      "time": 96.301,
+      "level": 2,
+      "title": "Three. The showcase — the doer"
+    },
+    {
+      "time": 161.839,
+      "level": 2,
+      "title": "Four. The connectors — seven single letters"
+    },
+    {
+      "time": 266.835,
+      "level": 2,
+      "title": "Five. The conjugation — four letters you already know"
+    },
+    {
+      "time": 369.777,
+      "level": 2,
+      "title": "Six. The endings — us, me, you"
+    },
+    {
+      "time": 436.706,
+      "level": 2,
+      "title": "Seven. The secret shape of the whole prayer"
+    },
+    {
+      "time": 512.042,
+      "level": 2,
+      "title": "Eight. Two roots that split"
+    },
+    {
+      "time": 586.623,
+      "level": 2,
+      "title": "Nine. Now the other prayer"
+    },
+    {
+      "time": 704.907,
+      "level": 2,
+      "title": "Ten. Say it"
+    }
+  ]
+}

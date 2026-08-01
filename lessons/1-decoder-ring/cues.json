@@ -1,0 +1,1561 @@
+{
+  "cues": [
+    {
+      "type": "verse",
+      "time": 1.837,
+      "lines": [
+        {
+          "role": "he",
+          "text": "תְּפִלַּת הַדֶּרֶךְ"
+        },
+        {
+          "role": "translit",
+          "text": "تْفِلَّات هَدِّرِخ"
+        },
+        {
+          "role": "roman",
+          "text": "tefilat ha-derech"
+        },
+        {
+          "role": "gloss",
+          "text": "the prayer of the road"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 18.916,
+      "phrase": "תְּפִלַּת הַדֶּרֶךְ",
+      "lang": "he",
+      "gloss": "the prayer of the road · صلاة الطريق",
+      "new": "",
+      "read": "تْفِلَّات هَدِّرِخ"
+    },
+    {
+      "type": "vocab",
+      "time": 38.528,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "תְּפִלַּת הַדֶּרֶךְ"
+        },
+        {
+          "lang": "ar",
+          "word": "إِضافَةٌ"
+        },
+        {
+          "lang": "en",
+          "word": "prayer-OF the-road — a construct chain"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 58.011,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "הַ"
+        },
+        {
+          "lang": "ar",
+          "word": "أَلْ"
+        },
+        {
+          "lang": "en",
+          "word": "the — same job, same position"
+        }
+      ]
+    },
+    {
+      "type": "overlay",
+      "time": 79.224,
+      "title": "How this lesson works",
+      "lines": [
+        "Every Hebrew word is spoken by a Hebrew voice, and its Arabic cousin right after it",
+        "Every line is built from its end backwards, one piece at a time",
+        "After each piece comes a real silence — that one is yours"
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 101.236,
+      "entries": [
+        {
+          "lang": "en",
+          "word": "six consonant pairs"
+        },
+        {
+          "lang": "ar",
+          "word": "سِتَّةُ أَزْواجٍ مِنَ الحُروف"
+        },
+        {
+          "lang": "he",
+          "word": "שֵׁשׁ"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 113.299,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "שָׁלוֹם"
+        },
+        {
+          "lang": "ar",
+          "word": "سَلامٌ"
+        },
+        {
+          "lang": "en",
+          "word": "peace"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 142.66,
+      "phrase": "שָׁלוֹם",
+      "lang": "he",
+      "gloss": "peace · سَلام",
+      "new": "",
+      "read": "شالوم"
+    },
+    {
+      "type": "vocab",
+      "time": 149.09,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "צָעַד"
+        },
+        {
+          "lang": "ar",
+          "word": "صَعِدَ"
+        },
+        {
+          "lang": "en",
+          "word": "to step ↔ to climb"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 178.339,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "אָחַז"
+        },
+        {
+          "lang": "ar",
+          "word": "أَخَذَ"
+        },
+        {
+          "lang": "en",
+          "word": "to seize / to take"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 208.123,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "חַיִּים"
+        },
+        {
+          "lang": "ar",
+          "word": "حَياةٌ"
+        },
+        {
+          "lang": "en",
+          "word": "life"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 237.448,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "עוֹלָם"
+        },
+        {
+          "lang": "ar",
+          "word": "عالَمٌ"
+        },
+        {
+          "lang": "en",
+          "word": "world"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 263.096,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "קוֹל"
+        },
+        {
+          "lang": "ar",
+          "word": "قَولٌ"
+        },
+        {
+          "lang": "en",
+          "word": "voice ↔ utterance"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 280.582,
+      "lines": [
+        {
+          "role": "title",
+          "text": "The decoder ring"
+        },
+        {
+          "role": "pair",
+          "text": "ש → س"
+        },
+        {
+          "role": "pair",
+          "text": "צ → ص"
+        },
+        {
+          "role": "pair",
+          "text": "ז → ذ"
+        },
+        {
+          "role": "pair",
+          "text": "ח → ح"
+        },
+        {
+          "role": "pair",
+          "text": "ע → ع"
+        },
+        {
+          "role": "pair",
+          "text": "ק → ق"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 319.017,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "ڤ"
+        },
+        {
+          "lang": "en",
+          "word": "v — as in \"very\""
+        },
+        {
+          "lang": "he",
+          "word": "ו · ב"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 332.084,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "گ"
+        },
+        {
+          "lang": "en",
+          "word": "hard g — as in \"go\""
+        },
+        {
+          "lang": "he",
+          "word": "ג"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 341.014,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "پ"
+        },
+        {
+          "lang": "en",
+          "word": "p — as in \"pen\""
+        },
+        {
+          "lang": "he",
+          "word": "פּ"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 348.57,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "تْس"
+        },
+        {
+          "lang": "en",
+          "word": "ts — ONE sound, as in \"cats\""
+        },
+        {
+          "lang": "he",
+          "word": "צ"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 367.107,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "خ"
+        },
+        {
+          "lang": "en",
+          "word": "kh · stress the LAST syllable"
+        },
+        {
+          "lang": "he",
+          "word": "ח · כ"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 382.25,
+      "lines": [
+        {
+          "role": "he",
+          "text": "יְהִי רָצוֹן מִלְּפָנֶיךָ, אֲדוֹנָי אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ"
+        },
+        {
+          "role": "translit",
+          "text": "يِهي راتْسون مِلفانيخا، أَدوناي إِلوهينو ڤِإِلوهيْ أَڤوتينو"
+        },
+        {
+          "role": "gloss",
+          "text": "May it be Your will, our Lord and God of our fathers"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 392.551,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "רָצוֹן"
+        },
+        {
+          "lang": "ar",
+          "word": "رِضْوانٌ"
+        },
+        {
+          "lang": "en",
+          "word": "will · divine good-pleasure"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 421.18,
+      "phrase": "יְהִי רָצוֹן",
+      "lang": "he",
+      "gloss": "may it be (Your) will · لِيَكُن رِضًا",
+      "new": "",
+      "read": "يِهي راتْسون"
+    },
+    {
+      "type": "vocab",
+      "time": 428.091,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "מִלְּפָנֶיךָ"
+        },
+        {
+          "lang": "ar",
+          "word": "مِنْ لَدُنْكَ"
+        },
+        {
+          "lang": "en",
+          "word": "from before You"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 449.572,
+      "phrase": "יְהִי רָצוֹן מִלְּפָנֶיךָ",
+      "lang": "he",
+      "gloss": "may it be Your will",
+      "new": "מִלְּפָנֶיךָ",
+      "read": "يِهي راتْسون مِلفانيخا"
+    },
+    {
+      "type": "vocab",
+      "time": 458.678,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "אֱלֹהֵינוּ"
+        },
+        {
+          "lang": "ar",
+          "word": "إِلٰهُنا"
+        },
+        {
+          "lang": "en",
+          "word": "our God — root and suffix both"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 477.642,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "אֲבוֹתֵינוּ"
+        },
+        {
+          "lang": "ar",
+          "word": "آباؤُنا"
+        },
+        {
+          "lang": "en",
+          "word": "our fathers"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 498.604,
+      "phrase": "אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ",
+      "lang": "he",
+      "gloss": "our God and God of our fathers",
+      "new": "",
+      "read": "إِلوهينو ڤِإِلوهيْ أَڤوتينو"
+    },
+    {
+      "type": "drill",
+      "time": 513.004,
+      "phrase": "אֲדוֹנָי אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ",
+      "lang": "he",
+      "gloss": "Lord our God and God of our fathers",
+      "new": "אֲדוֹנָי",
+      "read": "أَدوناي إِلوهينو ڤِإِلوهيْ أَڤوتينو"
+    },
+    {
+      "type": "drill",
+      "time": 526.228,
+      "phrase": "יְהִי רָצוֹן מִלְּפָנֶיךָ, אֲדוֹנָי אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ",
+      "lang": "he",
+      "gloss": "May it be Your will, our Lord and God of our fathers",
+      "new": "יְהִי רָצוֹן מִלְּפָנֶיךָ",
+      "read": "يِهي راتْسون مِلفانيخا، أَدوناي إِلوهينو ڤِإِلوهيْ أَڤوتينو"
+    },
+    {
+      "type": "verse",
+      "time": 545.014,
+      "lines": [
+        {
+          "role": "he",
+          "text": "שֶׁתּוֹלִיכֵנוּ לְשָׁלוֹם, וְתַצְעִידֵנוּ לְשָׁלוֹם, וְתַדְרִיכֵנוּ לְשָׁלוֹם"
+        },
+        {
+          "role": "translit",
+          "text": "شِتّوليخينو لِشالوم، ڤِتَتْسعيدينو لِشالوم، ڤِتَدريخينو لِشالوم"
+        },
+        {
+          "role": "gloss",
+          "text": "that You lead us in peace, make us step in peace, guide us in peace"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 555.82,
+      "phrase": "לְשָׁלוֹם",
+      "lang": "he",
+      "gloss": "in peace · لِسَلامٍ",
+      "new": "",
+      "read": "لِشالوم"
+    },
+    {
+      "type": "vocab",
+      "time": 574.484,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "וְתַצְעִידֵנוּ"
+        },
+        {
+          "lang": "ar",
+          "word": "صَعِدَ"
+        },
+        {
+          "lang": "en",
+          "word": "make us step ← the climbing root"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 597.909,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "דֶּרֶךְ"
+        },
+        {
+          "lang": "ar",
+          "word": "أَدْرَكَ · دَرَكٌ"
+        },
+        {
+          "lang": "en",
+          "word": "road ↔ to reach along a way"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 625.036,
+      "phrase": "שֶׁתּוֹלִיכֵנוּ לְשָׁלוֹם",
+      "lang": "he",
+      "gloss": "that You lead us in peace",
+      "new": "שֶׁתּוֹלִיכֵנוּ",
+      "read": "شِتّوليخينو لِشالوم"
+    },
+    {
+      "type": "drill",
+      "time": 633.796,
+      "phrase": "וְתַצְעִידֵנוּ לְשָׁלוֹם, וְתַדְרִיכֵנוּ לְשָׁלוֹם",
+      "lang": "he",
+      "gloss": "make us step in peace, guide us in peace",
+      "new": "",
+      "read": "ڤِتَتْسعيدينو لِشالوم، ڤِتَدريخينو لِشالوم"
+    },
+    {
+      "type": "drill",
+      "time": 648.724,
+      "phrase": "שֶׁתּוֹלִיכֵנוּ לְשָׁלוֹם, וְתַצְעִידֵנוּ לְשָׁלוֹם, וְתַדְרִיכֵנוּ לְשָׁלוֹם",
+      "lang": "he",
+      "gloss": "that You lead us, make us step, guide us — all in peace",
+      "new": "",
+      "read": "شِتّوليخينو لِشالوم، ڤِتَتْسعيدينو لِشالوم، ڤِتَدريخينو لِشالوم"
+    },
+    {
+      "type": "verse",
+      "time": 668.824,
+      "lines": [
+        {
+          "role": "he",
+          "text": "וְתַגִּיעֵנוּ לִמְחוֹז חֶפְצֵנוּ, לְחַיִּים וּלְשִׂמְחָה וּלְשָׁלוֹם"
+        },
+        {
+          "role": "translit",
+          "text": "ڤِتَگّيعينو لِمْخوز خِفْتْسينو، لِخَييم وُلْسِمخا وُلْشالوم"
+        },
+        {
+          "role": "gloss",
+          "text": "and bring us to the haven of our desire — for life, joy and peace"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 677.667,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "מְחוֹז"
+        },
+        {
+          "lang": "ar",
+          "word": "مَأخَذٌ"
+        },
+        {
+          "lang": "en",
+          "word": "haven — \"the place you take hold of\""
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 702.383,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "שִׂמְחָה"
+        },
+        {
+          "lang": "ar",
+          "word": "سَماحةٌ"
+        },
+        {
+          "lang": "en",
+          "word": "joy ↔ open-heartedness"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 737.716,
+      "phrase": "לְחַיִּים וּלְשִׂמְחָה וּלְשָׁלוֹם",
+      "lang": "he",
+      "gloss": "for life, joy and peace",
+      "new": "",
+      "read": "لِخَييم وُلْسِمخا وُلْشالوم"
+    },
+    {
+      "type": "drill",
+      "time": 747.82,
+      "phrase": "לִמְחוֹז חֶפְצֵנוּ",
+      "lang": "he",
+      "gloss": "to the haven of our desire",
+      "new": "",
+      "read": "لِمْخوز خِفْتْسينو"
+    },
+    {
+      "type": "drill",
+      "time": 756.436,
+      "phrase": "וְתַגִּיעֵנוּ לִמְחוֹז חֶפְצֵנוּ, לְחַיִּים וּלְשִׂמְחָה וּלְשָׁלוֹם",
+      "lang": "he",
+      "gloss": "and bring us to the haven of our desire — for life, joy and peace",
+      "new": "וְתַגִּיעֵנוּ",
+      "read": "ڤِتَگّيعينو لِمْخوز خِفْتْسينو، لِخَييم وُلْسِمخا وُلْشالوم"
+    },
+    {
+      "type": "verse",
+      "time": 775.655,
+      "lines": [
+        {
+          "role": "he",
+          "text": "וְתַצִּילֵנוּ מִכַּף כָּל אוֹיֵב וְאוֹרֵב וְלִסְטִים וְחַיּוֹת רָעוֹת בַּדֶּרֶךְ"
+        },
+        {
+          "role": "translit",
+          "text": "ڤِتَتْسيلينو مِكَّف كول أويِڤ ڤِأوريڤ ڤِلِسطيم ڤِخَييوت راعوت بَدِّرِخ"
+        },
+        {
+          "role": "gloss",
+          "text": "and save us from the palm of every enemy, ambusher, bandit and wild beast on the road"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 785.439,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "מִכַּף כָּל"
+        },
+        {
+          "lang": "ar",
+          "word": "مِنْ كَفِّ كُلِّ"
+        },
+        {
+          "lang": "en",
+          "word": "from the palm of every…"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 806.836,
+      "phrase": "מִכַּף כָּל אוֹיֵב",
+      "lang": "he",
+      "gloss": "from the palm of every enemy",
+      "new": "",
+      "read": "مِكَّف كول أويِڤ"
+    },
+    {
+      "type": "vocab",
+      "time": 815.391,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "לִסְטִים"
+        },
+        {
+          "lang": "en",
+          "word": "bandits — a Greek loanword, λῃστής"
+        },
+        {
+          "lang": "ar",
+          "word": "مِثْلَ قانونٍ وإِبْليس"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 836.986,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "חַיּוֹת"
+        },
+        {
+          "lang": "ar",
+          "word": "حَيَواناتٌ"
+        },
+        {
+          "lang": "en",
+          "word": "beasts — \"living things\", in both"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 863.716,
+      "phrase": "וְאוֹרֵב וְלִסְטִים וְחַיּוֹת רָעוֹת בַּדֶּרֶךְ",
+      "lang": "he",
+      "gloss": "and ambusher and bandit and wild beasts on the road",
+      "new": "",
+      "read": "ڤِأوريڤ ڤِلِسطيم ڤِخَييوت راعوت بَدِّرِخ"
+    },
+    {
+      "type": "drill",
+      "time": 876.244,
+      "phrase": "וְתַצִּילֵנוּ מִכַּף כָּל אוֹיֵב וְאוֹרֵב וְלִסְטִים וְחַיּוֹת רָעוֹת בַּדֶּרֶךְ",
+      "lang": "he",
+      "gloss": "and save us from the palm of every enemy, ambusher, bandit and wild beast on the road",
+      "new": "וְתַצִּילֵנוּ",
+      "read": "ڤِتَتْسيلينو مِكَّف كول أويِڤ ڤِأوريڤ ڤِلِسطيم ڤِخَييوت راعوت بَدِّرِخ"
+    },
+    {
+      "type": "verse",
+      "time": 896.388,
+      "lines": [
+        {
+          "role": "he",
+          "text": "וּמִכָּל מִינֵי פֻּרְעָנֻיּוֹת הַמִּתְרַגְּשׁוֹת לָבוֹא לָעוֹלָם"
+        },
+        {
+          "role": "translit",
+          "text": "أومِكّول مينيه پُرعانِيّوت هَمِتْرَگّشوت لاڤو لاعولام"
+        },
+        {
+          "role": "gloss",
+          "text": "and from all kinds of calamity rushing to come into the world"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 904.634,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "לָעוֹלָם"
+        },
+        {
+          "lang": "ar",
+          "word": "إِلى العالَمِ"
+        },
+        {
+          "lang": "en",
+          "word": "into the world"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 926.836,
+      "phrase": "לָבוֹא לָעוֹלָם",
+      "lang": "he",
+      "gloss": "to come into the world",
+      "new": "",
+      "read": "لاڤو لاعولام"
+    },
+    {
+      "type": "drill",
+      "time": 933.916,
+      "phrase": "הַמִּתְרַגְּשׁוֹת לָבוֹא לָעוֹלָם",
+      "lang": "he",
+      "gloss": "rushing to come into the world",
+      "new": "הַמִּתְרַגְּשׁוֹת",
+      "read": "هَمِتْرَگّشوت لاڤو لاعولام"
+    },
+    {
+      "type": "drill",
+      "time": 943.396,
+      "phrase": "וּמִכָּל מִינֵי פֻּרְעָנֻיּוֹת הַמִּתְרַגְּשׁוֹת לָבוֹא לָעוֹלָם",
+      "lang": "he",
+      "gloss": "and from all kinds of calamity rushing to come into the world",
+      "new": "וּמִכָּל מִינֵי פֻּרְעָנֻיּוֹת",
+      "read": "أومِكّول مينيه پُرعانِيّوت هَمِتْرَگّشوت لاڤو لاعولام"
+    },
+    {
+      "type": "verse",
+      "time": 960.424,
+      "lines": [
+        {
+          "role": "he",
+          "text": "וְתִשְׁלַח בְּרָכָה בְּכָל מַעֲשֵׂה יָדֵינוּ"
+        },
+        {
+          "role": "translit",
+          "text": "ڤِتِشلَخ بْراخا بِخول مَعَسيه يادينو"
+        },
+        {
+          "role": "gloss",
+          "text": "and send blessing on all the work of our hands"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 968.679,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "בְּרָכָה"
+        },
+        {
+          "lang": "ar",
+          "word": "بَرَكةٌ"
+        },
+        {
+          "lang": "en",
+          "word": "blessing — nothing moved at all"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 1001.249,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "בֶּרֶךְ"
+        },
+        {
+          "lang": "ar",
+          "word": "بَرَكَ · مَبْرَكٌ"
+        },
+        {
+          "lang": "en",
+          "word": "the KNEE — what blessing is built from"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 1031.003,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "יָדֵינוּ"
+        },
+        {
+          "lang": "ar",
+          "word": "أَيْدينا"
+        },
+        {
+          "lang": "en",
+          "word": "our hands"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 1051.348,
+      "phrase": "בְּכָל מַעֲשֵׂה יָדֵינוּ",
+      "lang": "he",
+      "gloss": "on all the work of our hands",
+      "new": "",
+      "read": "بِخول مَعَسيه يادينو"
+    },
+    {
+      "type": "drill",
+      "time": 1060.156,
+      "phrase": "וְתִשְׁלַח בְּרָכָה בְּכָל מַעֲשֵׂה יָדֵינוּ",
+      "lang": "he",
+      "gloss": "and send blessing on all the work of our hands",
+      "new": "וְתִשְׁלַח בְּרָכָה",
+      "read": "ڤِتِشلَخ بْراخا بِخول مَعَسيه يادينو"
+    },
+    {
+      "type": "verse",
+      "time": 1074.555,
+      "lines": [
+        {
+          "role": "he",
+          "text": "וְתִתְּנֵנִי לְחֵן וּלְחֶסֶד וּלְרַחֲמִים, בְּעֵינֶיךָ וּבְעֵינֵי כָל רוֹאֵינוּ"
+        },
+        {
+          "role": "translit",
+          "text": "ڤِتِتّنيني لِخين وُلْخِسِد وُلْرَخَميم، بِعينيخا أوڤعينيه خول رُوئينو"
+        },
+        {
+          "role": "gloss",
+          "text": "and grant me grace, kindness and mercy — in Your eyes and the eyes of all who see us"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 1084.888,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "חֵן"
+        },
+        {
+          "lang": "ar",
+          "word": "حَنانٌ · الحَنّان"
+        },
+        {
+          "lang": "en",
+          "word": "grace, tenderness"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 1115.453,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "חֶסֶד"
+        },
+        {
+          "lang": "ar",
+          "word": "حَسَدٌ"
+        },
+        {
+          "lang": "en",
+          "word": "kindness ↔ envy — one root, opposite ends"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 1152.911,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "רַחֲמִים"
+        },
+        {
+          "lang": "ar",
+          "word": "رَحْمةٌ"
+        },
+        {
+          "lang": "en",
+          "word": "mercy"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 1175.604,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "רֶחֶם"
+        },
+        {
+          "lang": "ar",
+          "word": "رَحِمٌ"
+        },
+        {
+          "lang": "en",
+          "word": "the WOMB — the root under \"mercy\""
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 1204.828,
+      "phrase": "לְחֵן וּלְחֶסֶד וּלְרַחֲמִים",
+      "lang": "he",
+      "gloss": "grace, kindness and mercy",
+      "new": "",
+      "read": "لِخين وُلْخِسِد وُلْرَخَميم"
+    },
+    {
+      "type": "vocab",
+      "time": 1214.751,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "עֵינֶיךָ · רוֹאֵינוּ"
+        },
+        {
+          "lang": "ar",
+          "word": "عَينَيكَ · رَأى"
+        },
+        {
+          "lang": "en",
+          "word": "your eyes · those who see"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 1242.532,
+      "phrase": "בְּעֵינֶיךָ וּבְעֵינֵי כָל רוֹאֵינוּ",
+      "lang": "he",
+      "gloss": "in Your eyes and the eyes of all who see us",
+      "new": "",
+      "read": "بِعينيخا أوڤعينيه خول رُوئينو"
+    },
+    {
+      "type": "drill",
+      "time": 1253.62,
+      "phrase": "וְתִתְּנֵנִי לְחֵן וּלְחֶסֶד וּלְרַחֲמִים, בְּעֵינֶיךָ וּבְעֵינֵי כָל רוֹאֵינוּ",
+      "lang": "he",
+      "gloss": "and grant me grace, kindness and mercy — in Your eyes and the eyes of all who see us",
+      "new": "וְתִתְּנֵנִי",
+      "read": "ڤِتِتّنيني لِخين وُلْخِسِد وُلْرَخَميم، بِعينيخا أوڤعينيه خول رُوئينو"
+    },
+    {
+      "type": "verse",
+      "time": 1274.74,
+      "lines": [
+        {
+          "role": "he",
+          "text": "וְתִשְׁמַע קוֹל תַּחֲנוּנֵינוּ"
+        },
+        {
+          "role": "translit",
+          "text": "ڤِتِشمَع كول تَخَنونينو"
+        },
+        {
+          "role": "gloss",
+          "text": "and hear the voice of our supplication"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 1280.74,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "וְתִשְׁמַע"
+        },
+        {
+          "lang": "ar",
+          "word": "وَتَسمَعَ"
+        },
+        {
+          "lang": "en",
+          "word": "and may You hear — same root, same prefix"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 1314.529,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "תַּחֲנוּן"
+        },
+        {
+          "lang": "ar",
+          "word": "تَحَنُّنٌ"
+        },
+        {
+          "lang": "en",
+          "word": "supplication — same root AND same pattern"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 1344.82,
+      "phrase": "קוֹל תַּחֲנוּנֵינוּ",
+      "lang": "he",
+      "gloss": "the voice of our supplication",
+      "new": "",
+      "read": "كول تَخَنونينو"
+    },
+    {
+      "type": "drill",
+      "time": 1353.1,
+      "phrase": "וְתִשְׁמַע קוֹל תַּחֲנוּנֵינוּ",
+      "lang": "he",
+      "gloss": "and hear the voice of our supplication",
+      "new": "וְתִשְׁמַע",
+      "read": "ڤِتِشمَع كول تَخَنونينو"
+    },
+    {
+      "type": "verse",
+      "time": 1365.71,
+      "lines": [
+        {
+          "role": "he",
+          "text": "כִּי אֵל שׁוֹמֵעַ תְּפִלָּה וְתַחֲנוּן אָתָּה"
+        },
+        {
+          "role": "translit",
+          "text": "كي إيل شوميعَ تْفِلّا ڤِتَخَنون آتّا"
+        },
+        {
+          "role": "gloss",
+          "text": "for You are a God who hears prayer and supplication"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 1371.303,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "יִשְׁמָעֵאל"
+        },
+        {
+          "lang": "ar",
+          "word": "إِسماعيل"
+        },
+        {
+          "lang": "en",
+          "word": "\"God hears\" — a sentence, not a name"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 1396.84,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "صَلاةٌ"
+        },
+        {
+          "lang": "he",
+          "word": "צְלוֹתָא"
+        },
+        {
+          "lang": "en",
+          "word": "borrowed from Aramaic ṣəlōtā — \"to bow\""
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 1422.144,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "אָתָּה"
+        },
+        {
+          "lang": "ar",
+          "word": "أَنتَ"
+        },
+        {
+          "lang": "en",
+          "word": "you — Hebrew swallowed the n"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 1450.636,
+      "phrase": "שׁוֹמֵעַ תְּפִלָּה וְתַחֲנוּן אָתָּה",
+      "lang": "he",
+      "gloss": "You are one who hears prayer and supplication",
+      "new": "",
+      "read": "شوميعَ تْفِلّا ڤِتَخَنون آتّا"
+    },
+    {
+      "type": "drill",
+      "time": 1461.724,
+      "phrase": "כִּי אֵל שׁוֹמֵעַ תְּפִלָּה וְתַחֲנוּן אָתָּה",
+      "lang": "he",
+      "gloss": "for You are a God who hears prayer and supplication",
+      "new": "כִּי אֵל",
+      "read": "كي إيل شوميعَ تْفِلّا ڤِتَخَنون آتّا"
+    },
+    {
+      "type": "verse",
+      "time": 1476.138,
+      "lines": [
+        {
+          "role": "he",
+          "text": "בָּרוּךְ אַתָּה אֲדוֹנָי, שׁוֹמֵעַ תְּפִלָּה"
+        },
+        {
+          "role": "translit",
+          "text": "باروخ أَتّا أَدوناي، شوميعَ تْفِلّا"
+        },
+        {
+          "role": "gloss",
+          "text": "Blessed are You, Lord, who hears prayer"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 1480.9,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "בָּרוּךְ אַתָּה"
+        },
+        {
+          "lang": "ar",
+          "word": "مُبارَكٌ أَنتَ"
+        },
+        {
+          "lang": "en",
+          "word": "blessed are You"
+        }
+      ]
+    },
+    {
+      "type": "drill",
+      "time": 1501.996,
+      "phrase": "בָּרוּךְ אַתָּה אֲדוֹנָי, שׁוֹמֵעַ תְּפִלָּה",
+      "lang": "he",
+      "gloss": "Blessed are You, Lord, who hears prayer",
+      "new": "",
+      "read": "باروخ أَتّا أَدوناي، شوميعَ تْفِلّا"
+    },
+    {
+      "type": "verse",
+      "time": 1526.572,
+      "lines": [
+        {
+          "role": "he",
+          "text": "יְהִי רָצוֹן מִלְּפָנֶיךָ, אֲדוֹנָי אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ"
+        },
+        {
+          "role": "translit",
+          "text": "يِهي راتْسون مِلفانيخا، أَدوناي إِلوهينو ڤِإِلوهيْ أَڤوتينو"
+        },
+        {
+          "role": "gloss",
+          "text": "1 · May it be Your will, our Lord and God of our fathers"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 1531.636,
+      "lines": [
+        {
+          "role": "he",
+          "text": "שֶׁתּוֹלִיכֵנוּ לְשָׁלוֹם, וְתַצְעִידֵנוּ לְשָׁלוֹם, וְתַדְרִיכֵנוּ לְשָׁלוֹם"
+        },
+        {
+          "role": "translit",
+          "text": "شِتّوليخينو لِشالوم، ڤِتَتْسعيدينو لِشالوم، ڤِتَدريخينو لِشالوم"
+        },
+        {
+          "role": "gloss",
+          "text": "2 · that You lead us in peace, make us step in peace, guide us in peace"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 1537.276,
+      "lines": [
+        {
+          "role": "he",
+          "text": "וְתַגִּיעֵנוּ לִמְחוֹז חֶפְצֵנוּ, לְחַיִּים וּלְשִׂמְחָה וּלְשָׁלוֹם"
+        },
+        {
+          "role": "translit",
+          "text": "ڤِتَگّيعينو لِمْخوز خِفْتْسينو، لِخَييم وُلْسِمخا وُلْشالوم"
+        },
+        {
+          "role": "gloss",
+          "text": "3 · and bring us to the haven of our desire — for life, joy and peace"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 1542.292,
+      "lines": [
+        {
+          "role": "he",
+          "text": "וְתַצִּילֵנוּ מִכַּף כָּל אוֹיֵב וְאוֹרֵב וְלִסְטִים וְחַיּוֹת רָעוֹת בַּדֶּרֶךְ"
+        },
+        {
+          "role": "translit",
+          "text": "ڤِتَتْسيلينو مِكَّف كول أويِڤ ڤِأوريڤ ڤِلِسطيم ڤِخَييوت راعوت بَدِّرِخ"
+        },
+        {
+          "role": "gloss",
+          "text": "4 · and save us from the palm of every enemy, ambusher, bandit and wild beast on the road"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 1547.428,
+      "lines": [
+        {
+          "role": "he",
+          "text": "וּמִכָּל מִינֵי פֻּרְעָנֻיּוֹת הַמִּתְרַגְּשׁוֹת לָבוֹא לָעוֹלָם"
+        },
+        {
+          "role": "translit",
+          "text": "أومِكّول مينيه پُرعانِيّوت هَمِتْرَگّشوت لاڤو لاعولام"
+        },
+        {
+          "role": "gloss",
+          "text": "5 · and from all kinds of calamity rushing to come into the world"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 1551.532,
+      "lines": [
+        {
+          "role": "he",
+          "text": "וְתִשְׁלַח בְּרָכָה בְּכָל מַעֲשֵׂה יָדֵינוּ"
+        },
+        {
+          "role": "translit",
+          "text": "ڤِتِشلَخ بْراخا بِخول مَعَسيه يادينو"
+        },
+        {
+          "role": "gloss",
+          "text": "6 · and send blessing on all the work of our hands"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 1554.844,
+      "lines": [
+        {
+          "role": "he",
+          "text": "וְתִתְּנֵנִי לְחֵן וּלְחֶסֶד וּלְרַחֲמִים, בְּעֵינֶיךָ וּבְעֵינֵי כָל רוֹאֵינוּ"
+        },
+        {
+          "role": "translit",
+          "text": "ڤِتِتّنيني لِخين وُلْخِسِد وُلْرَخَميم، بِعينيخا أوڤعينيه خول رُوئينو"
+        },
+        {
+          "role": "gloss",
+          "text": "7 · and grant me grace, kindness and mercy — in Your eyes and the eyes of all who see us"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 1560.508,
+      "lines": [
+        {
+          "role": "he",
+          "text": "וְתִשְׁמַע קוֹל תַּחֲנוּנֵינוּ"
+        },
+        {
+          "role": "translit",
+          "text": "ڤِتِشمَع كول تَخَنونينو"
+        },
+        {
+          "role": "gloss",
+          "text": "8 · and hear the voice of our supplication"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 1563.436,
+      "lines": [
+        {
+          "role": "he",
+          "text": "כִּי אֵל שׁוֹמֵעַ תְּפִלָּה וְתַחֲנוּן אָתָּה"
+        },
+        {
+          "role": "translit",
+          "text": "كي إيل شوميعَ تْفِلّا ڤِتَخَنون آتّا"
+        },
+        {
+          "role": "gloss",
+          "text": "9 · for You are a God who hears prayer and supplication"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 1566.724,
+      "lines": [
+        {
+          "role": "he",
+          "text": "בָּרוּךְ אַתָּה אֲדוֹנָי, שׁוֹמֵעַ תְּפִלָּה"
+        },
+        {
+          "role": "translit",
+          "text": "باروخ أَتّا أَدوناي، شوميعَ تْفِلّا"
+        },
+        {
+          "role": "gloss",
+          "text": "10 · Blessed are You, Lord, who hears prayer"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 1572.513,
+      "lines": [
+        {
+          "role": "ar",
+          "text": "اللَّهُمَّ إِنّا نَسأَلُكَ في سَفَرِنا هٰذا البِرَّ والتَّقوى"
+        },
+        {
+          "role": "gloss",
+          "text": "O God, we ask You on this journey of ours for righteousness and piety"
+        }
+      ]
+    },
+    {
+      "type": "verse",
+      "time": 1581.699,
+      "lines": [
+        {
+          "role": "ar",
+          "text": "أَعوذُ بِكَ مِنْ وَعْثاءِ السَّفَرِ وكَآبةِ المَنظَرِ وسوءِ المُنقَلَب"
+        },
+        {
+          "role": "gloss",
+          "text": "I take refuge in You from the hardship of the journey, the gloom of the sight, and an evil return"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 1588.552,
+      "entries": [
+        {
+          "lang": "ar",
+          "word": "وَعْثاءُ السَّفَرِ"
+        },
+        {
+          "lang": "he",
+          "word": "אוֹיֵב · לִסְטִים"
+        },
+        {
+          "lang": "en",
+          "word": "hardship of the road · enemy, bandit"
+        }
+      ]
+    },
+    {
+      "type": "vocab",
+      "time": 1603.539,
+      "entries": [
+        {
+          "lang": "he",
+          "word": "שָׁלוֹם"
+        },
+        {
+          "lang": "ar",
+          "word": "سَلامٌ"
+        },
+        {
+          "lang": "en",
+          "word": "not two words at all"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "time": 0.062,
+      "level": 2,
+      "title": "One. What this is"
+    },
+    {
+      "time": 94.286,
+      "level": 2,
+      "title": "Two. The decoder ring"
+    },
+    {
+      "time": 308.241,
+      "level": 2,
+      "title": "Three. Reading the Arabic transcription"
+    },
+    {
+      "time": 380.599,
+      "level": 2,
+      "title": "Four. Line one"
+    },
+    {
+      "time": 543.339,
+      "level": 2,
+      "title": "Five. Line two"
+    },
+    {
+      "time": 666.962,
+      "level": 2,
+      "title": "Six. Line three"
+    },
+    {
+      "time": 773.618,
+      "level": 2,
+      "title": "Seven. Line four"
+    },
+    {
+      "time": 894.65,
+      "level": 2,
+      "title": "Eight. Line five"
+    },
+    {
+      "time": 958.562,
+      "level": 2,
+      "title": "Nine. Line six"
+    },
+    {
+      "time": 1072.73,
+      "level": 2,
+      "title": "Ten. Line seven"
+    },
+    {
+      "time": 1272.89,
+      "level": 2,
+      "title": "Eleven. Line eight"
+    },
+    {
+      "time": 1363.898,
+      "level": 2,
+      "title": "Twelve. Line nine"
+    },
+    {
+      "time": 1474.263,
+      "level": 2,
+      "title": "Thirteen. Line ten"
+    },
+    {
+      "time": 1514.102,
+      "level": 2,
+      "title": "Fourteen. The whole thing"
+    },
+    {
+      "time": 1570.263,
+      "level": 2,
+      "title": "Fifteen. One last thing"
+    }
+  ]
+}
